@@ -136,7 +136,7 @@ At Revive, she has created a space where world-class dermatological expertise me
     "HIFU & Thread Lifts",
     "Platelet-Rich Plasma (PRP)",
     "Laser Medicine",
-    "Dermatosurgery",
+        
   ],
   timeline: [
     {

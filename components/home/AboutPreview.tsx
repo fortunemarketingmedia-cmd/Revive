@@ -11,10 +11,10 @@ export default function AboutPreview() {
   return (
     <section className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-stretch">
           
           {/* Left Column: Text & Stats */}
-          <div className="lg:col-span-7 flex flex-col items-start">
+          <div className="lg:col-span-7 flex flex-col justify-center">
             <AnimatedSectionTitle
               title="Where Clinical Science Meets Aesthetic Excellence"
               subtitle="The Revive Philosophy"
@@ -83,20 +83,20 @@ export default function AboutPreview() {
             </motion.div>
           </div>
 
-          {/* Right Column: Image */}
-          <div className="lg:col-span-5 relative w-full flex justify-center">
+          {/* Right Column: Image (Stretches dynamically to match Left Column height on desktop) */}
+          <div className="lg:col-span-5 relative w-full flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative w-full aspect-[4/5] max-w-[380px] rounded-3xl overflow-hidden shadow-luxury border border-border bg-altbg"
+              className="relative w-full h-[350px] sm:h-[450px] lg:h-full rounded-3xl overflow-hidden shadow-luxury border border-border bg-altbg"
             >
               <Image
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80"
                 alt="Revive Skin Clinic interior"
                 fill
-                sizes="(max-width: 768px) 100vw, 380px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 450px"
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
             </motion.div>

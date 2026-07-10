@@ -6,12 +6,18 @@ import AnimatedSectionTitle from "@/components/ui/AnimatedSectionTitle";
 import { doctorData } from "@/lib/content/clinic";
 
 export default function DoctorProfile() {
+  const bioParagraphs = doctorData.bio.split("\n\n");
+  const firstHalfBio = bioParagraphs.slice(0, 2);
+  const secondHalfBio = bioParagraphs.slice(2);
+
   return (
     <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col gap-20 lg:gap-24">
+        
+        {/* ROW 1: Doctor Profile Image (Left) & Title + Bio Intro (Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-16 items-center">
           
-          {/* Left Column: Doctor Image (Large) */}
+          {/* Left Column: Doctor Profile Photo */}
           <div className="lg:col-span-5 relative w-full flex justify-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -24,6 +30,7 @@ export default function DoctorProfile() {
                 src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80"
                 alt="Dr. Shraddha Sonanis"
                 fill
+                priority
                 sizes="(max-width: 768px) 100vw, 420px"
                 className="object-cover transition-transform duration-700 hover:scale-103"
               />
@@ -33,7 +40,7 @@ export default function DoctorProfile() {
             <div className="absolute -bottom-6 -left-6 w-36 h-36 rounded-full bg-secondary/15 -z-10 filter blur-2xl" />
           </div>
 
-          {/* Right Column: Complete Bio and Credentials */}
+          {/* Right Column: Title and Bio Part 1 */}
           <div className="lg:col-span-7 flex flex-col items-start">
             <AnimatedSectionTitle
               title="Clinical Leader & Founder"
@@ -46,9 +53,8 @@ export default function DoctorProfile() {
               {doctorData.title} &bull; {doctorData.specialization}
             </p>
 
-            {/* Split bio text into readable paragraphs */}
-            <div className="font-inter text-sm md:text-base text-body leading-relaxed flex flex-col gap-6 mb-10">
-              {doctorData.bio.split("\n\n").map((para, idx) => (
+            <div className="font-inter text-sm md:text-base text-body leading-relaxed flex flex-col gap-6">
+              {firstHalfBio.map((para, idx) => (
                 <motion.p
                   key={idx}
                   initial={{ opacity: 0, y: 15 }}
@@ -60,29 +66,27 @@ export default function DoctorProfile() {
                 </motion.p>
               ))}
             </div>
+          </div>
 
-            {/* Qualifications / Timeline list */}
-            <div className="w-full mb-10">
-              <h4 className="font-playfair text-lg text-heading font-medium tracking-wide mb-6">Academic Background</h4>
-              <div className="flex flex-col gap-4">
-                {doctorData.credentials.map((cred, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="flex justify-between items-start border-b border-border pb-3 last:border-0"
-                  >
-                    <div>
-                      <p className="font-playfair text-base text-heading font-medium">{cred.degree}</p>
-                      <p className="font-inter text-xs text-body/70 mt-0.5">{cred.institution}</p>
-                      {cred.subject && <p className="font-inter text-[10px] uppercase font-bold tracking-wider text-primary mt-1">{cred.subject}</p>}
-                    </div>
-                    <span className="font-playfair text-sm text-primary font-bold italic shrink-0 ml-4">{cred.year}</span>
-                  </motion.div>
-                ))}
-              </div>
+        </div>
+
+        {/* ROW 2: Bio Part 2 + Credentials (Left) & Clinic Consultation Room Image (Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-16 items-center">
+          
+          {/* Left Column: Bio Details, Academic Background, and Special Interests */}
+          <div className="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1">
+            <div className="font-inter text-sm md:text-base text-body leading-relaxed flex flex-col gap-6 mb-10 w-full">
+              {secondHalfBio.map((para, idx) => (
+                <motion.p
+                  key={idx}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                >
+                  {para}
+                </motion.p>
+              ))}
             </div>
 
             {/* Special Interests list */}
@@ -103,10 +107,32 @@ export default function DoctorProfile() {
                 ))}
               </div>
             </div>
+          </div>
 
+          {/* Right Column: Clinic Consultation Room Image (Exact same size as Row 1 Image) */}
+          <div className="lg:col-span-5 relative w-full flex justify-center order-1 lg:order-2">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full aspect-[4/5] max-w-[420px] rounded-[30px] overflow-hidden shadow-luxury border border-border bg-altbg"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80"
+                alt="Revive Skin Clinic consultation and laser rooms"
+                fill
+                sizes="(max-width: 768px) 100vw, 420px"
+                className="object-cover transition-transform duration-700 hover:scale-103"
+              />
+            </motion.div>
+            
+            {/* Absolute background accent elements */}
+            <div className="absolute -bottom-6 -right-6 w-36 h-36 rounded-full bg-secondary/15 -z-10 filter blur-2xl" />
           </div>
 
         </div>
+
       </div>
     </section>
   );

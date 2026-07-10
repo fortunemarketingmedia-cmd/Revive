@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import { Treatment } from "@/lib/content/treatments";
+import { useTreatmentModal } from "@/components/providers/TreatmentModalProvider";
 
 interface TreatmentCardProps {
   treatment: Treatment;
@@ -12,56 +13,59 @@ interface TreatmentCardProps {
 }
 
 export default function TreatmentCard({ treatment, index }: TreatmentCardProps) {
+  const { openTreatment } = useTreatmentModal();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-      whileHover={{ y: -8 }}
-      className="bg-white rounded-2xl border border-border shadow-luxury overflow-hidden flex flex-col h-full group"
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{ y: -6, scale: 1.015 }}
+      onClick={() => openTreatment(treatment)}
+      className="relative w-full min-h-[480px] lg:min-h-[510px] flex flex-col justify-end rounded-[2rem] border-2 border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.18)] overflow-hidden group bg-altbg cursor-pointer"
     >
-      {/* Image with reveal mask animation */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-altbg">
-        <Image
-          src={treatment.image}
-          alt={treatment.name}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 ease-luxury group-hover:scale-105"
-        />
-        <div className="absolute top-4 left-4">
-          <span className="font-inter text-[10px] font-bold uppercase tracking-wider text-primary bg-background/90 px-3 py-1.5 rounded-full border border-border/10 backdrop-blur-sm shadow-sm">
-            {treatment.categoryLabel}
-          </span>
-        </div>
+      {/* Background Image (Covers full card background) */}
+      <Image
+        src={treatment.image}
+        alt={treatment.name}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className="object-cover transition-transform duration-700 ease-luxury group-hover:scale-110"
+      />
+
+      {/* Glassmorphic Fading Frosted Blend Overlay (Impilo Health Style) */}
+      <div className="absolute bottom-0 left-0 right-0 h-[65%] rounded-b-[2rem] frosted-blend pointer-events-none z-10" />
+
+      {/* Pill Badge top left */}
+      <div className="absolute top-5 left-5 z-20">
+        <span className="font-inter text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white bg-white/20 px-4 py-2 rounded-full border border-white/35 backdrop-blur-md shadow-sm">
+          {treatment.categoryLabel}
+        </span>
       </div>
 
-      {/* Card Body */}
-      <div className="p-6 md:p-8 flex flex-col flex-grow">
-        <span className="text-accent2 text-xs font-semibold uppercase tracking-widest mb-2 block">
+      {/* Text Content Overlay (Smoothly integrated on top of the blend) */}
+      <div className="relative z-20 p-6 md:p-8 pt-12 flex flex-col w-full text-white">
+        <span className="text-[#F7BDA9] text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1.5 block">
           {treatment.tagline}
         </span>
-        <h3 className="font-playfair text-xl md:text-2xl text-heading font-medium tracking-tight mb-3 transition-colors group-hover:text-primary">
+        <h3 className="font-playfair text-xl md:text-2xl text-white font-medium tracking-tight mb-2 transition-colors group-hover:text-[#FDBD0E]">
           {treatment.name}
         </h3>
-        <p className="font-inter text-sm text-body leading-relaxed mb-6 flex-grow">
+        <p className="font-inter text-xs md:text-sm text-white/75 leading-relaxed mb-6 line-clamp-3">
           {treatment.description}
         </p>
 
-        {/* Action button */}
-        <div className="pt-4 border-t border-border flex items-center justify-between">
-          <span className="font-inter text-[10px] font-bold uppercase tracking-widest text-primary group-hover:text-accent1 transition-colors">
+        {/* Action Button */}
+        <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+          <span className="font-inter text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#FDBD0E] group-hover:text-white transition-colors">
             Learn More
           </span>
-          <span className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-primary group-hover:text-white group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+          <span className="w-8 h-8 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white group-hover:text-black group-hover:bg-[#FDBD0E] group-hover:border-[#FDBD0E] transition-all duration-300">
             <FiArrowRight className="text-sm transition-transform duration-300 group-hover:translate-x-0.5" />
           </span>
         </div>
       </div>
-      
-      {/* Full card link overlay */}
-      <Link href={`/treatments/${treatment.slug}`} className="absolute inset-0 z-10" aria-label={`Learn more about ${treatment.name}`} />
     </motion.div>
   );
 }

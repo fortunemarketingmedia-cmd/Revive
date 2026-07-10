@@ -121,10 +121,11 @@ export default function HeroSection() {
         style={{ originY: 0.5 }}
       >
         <Image
-          src="/images/hero-illustration.png"
+          src="/images/hero-illustration.webp"
           alt="Revive Clinical Laser Outline Sketch"
           fill
           priority
+          sizes="(max-width: 1024px) 100vw, 38vw"
           className="object-contain"
         />
       </motion.div>
@@ -133,10 +134,11 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0 pointer-events-none lg:hidden opacity-[0.45] flex items-center justify-center mix-blend-screen">
         <div className="relative w-[85vw] h-[85vw] max-w-[420px] max-h-[420px]">
           <Image
-            src="/images/hero-illustration.png"
+            src="/images/hero-illustration.webp"
             alt="Revive Clinical Laser Outline Sketch"
             fill
             priority
+            sizes="(max-width: 768px) 85vw, 420px"
             className="object-contain"
           />
         </div>

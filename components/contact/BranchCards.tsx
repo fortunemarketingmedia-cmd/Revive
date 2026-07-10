@@ -27,7 +27,7 @@ export default function BranchCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="bg-white rounded-3xl p-8 border border-border shadow-luxury flex flex-col gap-6 overflow-hidden h-full"
+                className="bg-white/75 backdrop-blur-[12px] rounded-[2rem] p-8 border-2 border-white/85 shadow-[0_15px_35px_rgba(0,0,0,0.08)] flex flex-col gap-6 overflow-hidden h-full"
               >
                 {/* Branch Info */}
                 <div className="flex flex-col gap-4">

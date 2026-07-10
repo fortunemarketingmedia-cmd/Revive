@@ -1,6 +1,10 @@
 import AboutHero from "@/components/about/AboutHero";
 import DoctorProfile from "@/components/about/DoctorProfile";
+import TeamTicker from "@/components/about/TeamTicker";
 import ClinicTimeline from "@/components/about/ClinicTimeline";
+import ProfessionalAffiliations from "@/components/about/ProfessionalAffiliations";
+import ClinicTeam from "@/components/about/ClinicTeam";
+import SocialImpact from "@/components/about/SocialImpact";
 import InstagramReels from "@/components/about/InstagramReels";
 
 export const metadata = {
@@ -14,8 +18,12 @@ export default function AboutPage() {
     <>
       <AboutHero />
       <DoctorProfile />
+      <TeamTicker />
+      <ClinicTeam />
       <ClinicTimeline />
+      <ProfessionalAffiliations />
       <InstagramReels />
+      <SocialImpact />
     </>
   );
 }

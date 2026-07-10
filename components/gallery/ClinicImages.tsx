@@ -1,100 +1,216 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiX, FiMaximize2 } from "react-icons/fi";
-import AnimatedSectionTitle from "@/components/ui/AnimatedSectionTitle";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const clinicPhotos = [
-  { url: "", label: "Treatment Room" },
-  { url: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80", label: "Doctor Consultation" },
-  { url: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80", label: "Laser Technology Setup" },
-  { url: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80", label: "Clinical Equipment" },
-  { url: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80", label: "Aesthetic Treatment" },
-  { url: "https://images.unsplash.com/photo-1608248597481-496100c8c836?w=800&q=80", label: "Premium Skincare Products" },
+const slideshowPhotos = [
+  {
+    url: "/images/about-hero-clinical.webp",
+    label: "Main Consultation & Advisory Suite",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80",
+    label: "Advanced Medical Dermatology Clinic Room",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80",
+    label: "Clinical Reception & Lobby Area",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80",
+    label: "Private Diagnosis Room",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1200&q=80",
+    label: "USFDA Laser Technology Setup Room",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80",
+    label: "Sterilized Medical-Grade Equipment Desk",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1200&q=80",
+    label: "Aesthetic Treatment & Skin-Barrier Therapy Room",
+  },
 ];
 
 export default function ClinicImages() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const startTimer = () => {
+    stopTimer();
+    timerRef.current = setInterval(() => {
+      setDirection(1);
+      setCurrentIndex((prev) => (prev + 1) % slideshowPhotos.length);
+    }, 4500); // 4.5 seconds interval
+  };
+
+  const stopTimer = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+  };
+
+  useEffect(() => {
+    startTimer();
+    return () => stopTimer();
+  }, []);
+
+  const handleNext = () => {
+    stopTimer();
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % slideshowPhotos.length);
+    startTimer();
+  };
+
+  const handlePrev = () => {
+    stopTimer();
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + slideshowPhotos.length) % slideshowPhotos.length);
+    startTimer();
+  };
+
+  const handleDotClick = (idx: number) => {
+    stopTimer();
+    setDirection(idx > currentIndex ? 1 : -1);
+    setCurrentIndex(idx);
+    startTimer();
+  };
+
+  // Cross-fade variants
+  const backgroundVariants = {
+    initial: {
+      opacity: 0,
+      scale: 1.05,
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        opacity: { duration: 1.2, ease: "easeInOut" },
+        scale: { duration: 1.8, ease: "easeOut" },
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 1.2, ease: "easeInOut" },
+    },
+  };
 
   return (
-    <section className="py-16 md:py-24 bg-altbg relative z-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <AnimatedSectionTitle
-          title="Our Clinical Environment"
-          subtitle="Inside Revive Skin Clinics"
-        />
-
-        {/* Masonry-style Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {clinicPhotos.map((photo, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: idx * 0.05 }}
-              onClick={() => setSelectedImage(photo.url)}
-              className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-luxury border border-border bg-background group cursor-pointer"
-            >
-              <Image
-                src={photo.url}
-                alt={photo.label}
-                fill
-                sizes="(max-width: 768px) 100vw, 350px"
-                className="object-cover transition-transform duration-700 ease-luxury group-hover:scale-105"
-              />
-              
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 text-white backdrop-blur-[2px]">
-                <FiMaximize2 className="text-xl self-end" />
-                <span className="font-playfair text-lg font-medium tracking-wide">
-                  {photo.label}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Lightbox Modal */}
-        <AnimatePresence>
-          {selectedImage && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedImage(null)}
-              className="fixed inset-0 z-50 bg-dark/90 backdrop-blur-md flex items-center justify-center p-6 cursor-zoom-out"
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute top-6 right-6 text-white/70 hover:text-white text-3xl focus:outline-none"
-                aria-label="Close Lightbox"
-              >
-                <FiX />
-              </button>
-
-              {/* Image Container */}
-              <motion.div
-                initial={{ scale: 0.95 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.95 }}
-                className="relative max-w-4xl w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Image
-                  src={selectedImage}
-                  alt="Enlarged clinic view"
-                  fill
-                  className="object-cover"
-                />
-              </motion.div>
-            </motion.div>
-          )}
+    <section className="relative w-full h-[550px] md:h-[650px] overflow-hidden flex flex-col justify-between py-16 md:py-20 text-white z-10 bg-black">
+      
+      {/* Immersive Slideshow Background Images */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <AnimatePresence initial={false} mode="popLayout">
+          <motion.div
+            key={currentIndex}
+            variants={backgroundVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="absolute inset-0 w-full h-full"
+          >
+            <Image
+              src={slideshowPhotos[currentIndex].url}
+              alt={slideshowPhotos[currentIndex].label}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          </motion.div>
         </AnimatePresence>
       </div>
+
+      {/* Dark Vignette Overlay for maximum readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/75 z-10 pointer-events-none" />
+
+      {/* 1. TOP HEADER OVERLAY AREA */}
+      <div className="relative z-20 text-center max-w-4xl mx-auto px-6">
+        <motion.span
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="font-inter text-xs font-semibold tracking-widest text-[#FDBD0E] uppercase mb-2 block"
+        >
+          Inside Revive Skin Clinics
+        </motion.span>
+        
+        <motion.h2
+          initial={{ opacity: 0, y: -15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="font-playfair text-3xl md:text-5xl font-medium tracking-tight text-white"
+        >
+          Our Clinical Environment
+        </motion.h2>
+
+        <div className="w-full flex items-center justify-center mt-4">
+          <div className="h-[1px] bg-white/20 w-16" />
+          <span className="w-1.5 h-1.5 mx-2 rounded-full bg-[#FDBD0E]" />
+          <div className="h-[1px] bg-white/20 w-16" />
+        </div>
+      </div>
+
+      {/* 2. BOTTOM INFO & DOTS AREA */}
+      <div className="relative z-20 text-center max-w-3xl mx-auto px-6">
+        {/* Large active description text */}
+        <AnimatePresence mode="wait">
+          <motion.h3
+            key={currentIndex}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.5 }}
+            className="font-playfair text-xl md:text-3xl font-medium text-white tracking-wide mb-6"
+          >
+            {slideshowPhotos[currentIndex].label}
+          </motion.h3>
+        </AnimatePresence>
+
+        {/* Interactive Progress Indicator Dots (Pills) */}
+        <div className="flex justify-center items-center gap-3">
+          {slideshowPhotos.map((_, idx) => {
+            const isActive = idx === currentIndex;
+            return (
+              <button
+                key={idx}
+                onClick={() => handleDotClick(idx)}
+                className={`h-2.5 rounded-full transition-all duration-500 ease-out focus:outline-none ${
+                  isActive
+                    ? "w-8 bg-[#FDBD0E] shadow-sm"
+                    : "w-2.5 bg-white/30 hover:bg-white/60"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      {/* 3. EDGE MANUAL NAVIGATION ARROWS */}
+      <button
+        onClick={handlePrev}
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-25 w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-white/10 flex items-center justify-center text-white text-2xl hover:bg-[#FDBD0E] hover:border-[#FDBD0E] hover:text-black transition-all duration-300 shadow-lg"
+        aria-label="Previous slide"
+      >
+        <FiChevronLeft />
+      </button>
+      <button
+        onClick={handleNext}
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-25 w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-white/10 flex items-center justify-center text-white text-2xl hover:bg-[#FDBD0E] hover:border-[#FDBD0E] hover:text-black transition-all duration-300 shadow-lg"
+        aria-label="Next slide"
+      >
+        <FiChevronRight />
+      </button>
+
     </section>
   );
 }

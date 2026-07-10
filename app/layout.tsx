@@ -5,6 +5,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LenisProvider from "@/components/providers/LenisProvider";
 import AIChatbot from "@/components/ui/AIChatbot";
+import BookingPopup from "@/components/layout/BookingPopup";
+import TreatmentModalProvider from "@/components/providers/TreatmentModalProvider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -60,15 +62,18 @@ export default function RootLayout({
     <html lang="en" className={`${plusJakartaSans.variable} ${inter.variable} ${playfairDisplay.variable}`} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         <LenisProvider>
-          {/* Subtle global noise overlay to elevate the texture */}
-          <div className="noise-bg" />
-          
-          <Navbar />
-          <main className="min-h-screen relative z-10">
-            {children}
-          </main>
-          <Footer />
-          <AIChatbot />
+          <TreatmentModalProvider>
+            {/* Subtle global noise overlay to elevate the texture */}
+            <div className="noise-bg" />
+            
+            <Navbar />
+            <main className="min-h-screen relative z-10">
+              {children}
+            </main>
+            <Footer />
+            <AIChatbot />
+            <BookingPopup />
+          </TreatmentModalProvider>
         </LenisProvider>
       </body>
     </html>

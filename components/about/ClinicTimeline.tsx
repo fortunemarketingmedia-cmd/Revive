@@ -1,64 +1,80 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import AnimatedSectionTitle from "@/components/ui/AnimatedSectionTitle";
-import { doctorData } from "@/lib/content/clinic";
 
 export default function ClinicTimeline() {
+  const standards = [
+    {
+      num: "01",
+      title: "Clinical Integrity",
+      description: "We prioritize evidence-based medical dermatology, diagnosing root causes before recommending aesthetic therapies.",
+    },
+    {
+      num: "02",
+      title: "Artistic Precision",
+      description: "Aesthetic work is an art. We strive for natural-looking results that respect and highlight your unique anatomy.",
+    },
+    {
+      num: "03",
+      title: "USFDA Standards",
+      description: "Zero compromises on safety. We only invest in gold-standard, USFDA-cleared medical lasers and equipment.",
+    },
+    {
+      num: "04",
+      title: "Patient Sanctuary",
+      description: "Dermatological care deserves comfort. Our spaces are designed to provide a serene, luxurious, and stress-free retreat.",
+    },
+  ];
+
   return (
-    <section className="py-20 md:py-28 bg-altbg relative overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+    <section className="py-24 md:py-32 relative overflow-hidden text-white min-h-[600px] flex items-center">
+      {/* Background Image Wrapper (Section only) */}
+      <div className="absolute inset-0 -z-20 w-full h-full">
+        <Image
+          src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1200&q=80"
+          alt="Revive Clinic Luxury Interior Backdrop"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        {/* Dark overlay with backdrop-blur */}
+        <div className="absolute inset-0 bg-black/75 backdrop-blur-[6px] -z-10" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
         <AnimatedSectionTitle
-          title="Milestones of Excellence"
-          subtitle="Our Timeline"
+          title="The Standards of Revive Care"
+          subtitle="Our Clinical Philosophy"
+          align="center"
+          className="mb-16 text-white [&>h2]:text-white [&>span]:text-[#FDBD0E]"
         />
 
-        {/* Timeline container */}
-        <div className="relative mt-16 md:mt-20">
-          {/* Vertical timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-primary/20 -translate-x-1/2" />
-
-          <div className="flex flex-col gap-12 md:gap-16">
-            {doctorData.timeline.map((milestone, idx) => {
-              const isEven = idx % 2 === 0;
-
-              return (
-                <div
-                  key={idx}
-                  className={`flex flex-col md:flex-row relative w-full items-start ${
-                    isEven ? "md:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Timeline point */}
-                  <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-accent2 border-2 border-white -translate-x-1/2 translate-y-2 z-10 shadow-sm" />
-
-                  {/* Empty spacer side for desktop */}
-                  <div className="hidden md:block w-1/2" />
-
-                  {/* Content side */}
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? 30 : -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className={`pl-10 md:pl-0 w-full md:w-1/2 ${
-                      isEven ? "md:pr-12 text-left md:text-right" : "md:pl-12 text-left"
-                    }`}
-                  >
-                    <span className="font-playfair text-xl md:text-2xl text-primary font-bold italic mb-1.5 block">
-                      {milestone.year}
-                    </span>
-                    <h3 className="font-playfair text-lg text-heading font-medium tracking-tight mb-2">
-                      {milestone.title}
-                    </h3>
-                    <p className="font-inter text-xs md:text-sm text-body leading-relaxed max-w-md md:ml-auto md:mr-0">
-                      {milestone.description}
-                    </p>
-                  </motion.div>
-                </div>
-              );
-            })}
-          </div>
+        {/* 4 Interactive Frosted Glass Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {standards.map((std, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              whileHover={{ y: -6, scale: 1.01 }}
+              className="bg-white/10 backdrop-blur-[12px] border border-white/20 rounded-[2rem] p-8 shadow-[0_15px_35px_rgba(0,0,0,0.25)] flex flex-col justify-start hover:bg-white/15 hover:border-white/35 transition-all duration-300 group"
+            >
+              <span className="font-playfair text-2xl font-bold text-[#FDBD0E] italic mb-4 block">
+                {std.num}
+              </span>
+              <h3 className="font-playfair text-xl font-medium tracking-tight text-white mb-3 group-hover:text-[#FDBD0E] transition-colors">
+                {std.title}
+              </h3>
+              <p className="font-inter text-xs sm:text-sm text-white/75 leading-relaxed">
+                {std.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

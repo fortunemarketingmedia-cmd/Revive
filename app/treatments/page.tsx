@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import TreatmentsHero from "@/components/treatments/TreatmentsHero";
 import TreatmentGrid from "@/components/treatments/TreatmentGrid";
 import BeforeAfterSection from "@/components/treatments/BeforeAfterSection";
+import TreatmentCareGuide from "@/components/treatments/TreatmentCareGuide";
 
 export const metadata = {
   title: "Skin, Hair & Laser Treatments — Revive Skin Clinic Nashik",
@@ -17,6 +18,7 @@ export default function TreatmentsPage() {
         <TreatmentGrid />
       </Suspense>
       <BeforeAfterSection />
+      <TreatmentCareGuide />
     </>
   );
 }

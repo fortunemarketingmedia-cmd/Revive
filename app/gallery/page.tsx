@@ -2,6 +2,8 @@ import GalleryHero from "@/components/gallery/GalleryHero";
 import BeforeAfterGrid from "@/components/gallery/BeforeAfterGrid";
 import ClinicImages from "@/components/gallery/ClinicImages";
 import TestimonialCards from "@/components/gallery/TestimonialCards";
+import GalleryStandards from "@/components/gallery/GalleryStandards";
+import GalleryFAQs from "@/components/gallery/GalleryFAQs";
 
 export const metadata = {
   title: "Gallery — Before & After Results — Revive Skin Clinic Nashik",
@@ -14,8 +16,10 @@ export default function GalleryPage() {
     <>
       <GalleryHero />
       <BeforeAfterGrid />
+      <GalleryStandards />
       <ClinicImages />
       <TestimonialCards />
+      <GalleryFAQs />
     </>
   );
 }
