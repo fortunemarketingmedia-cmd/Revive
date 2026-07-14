@@ -115,7 +115,7 @@ export default function TreatmentModalProvider({ children }: { children: React.R
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 25 }}
               transition={{ type: "spring", stiffness: 380, damping: 32 }}
-              className="relative w-full max-w-4xl h-[80vh] md:h-[75vh] bg-background border border-border/80 rounded-[2.5rem] shadow-luxury flex flex-col overflow-hidden z-10"
+              className="relative w-full max-w-5xl h-[85vh] md:h-[80vh] bg-background border border-border/80 rounded-[2.5rem] shadow-luxury flex flex-col overflow-hidden z-10"
             >
               {/* Close Button */}
               <button
@@ -207,7 +207,7 @@ export default function TreatmentModalProvider({ children }: { children: React.R
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 25 }}
               transition={{ type: "spring", stiffness: 380, damping: 32 }}
-              className="relative w-full max-w-6xl h-[90vh] md:h-[85vh] bg-background border border-border/80 rounded-[2.5rem] shadow-luxury flex flex-col md:flex-row overflow-hidden z-10"
+              className="relative w-full max-w-7xl h-[92vh] md:h-[90vh] bg-background border border-border/80 rounded-[2.5rem] shadow-luxury flex flex-col md:flex-row overflow-hidden z-10"
             >
               {/* Close Button */}
               <button
