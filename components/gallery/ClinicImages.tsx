@@ -91,13 +91,13 @@ export default function ClinicImages() {
       opacity: 1,
       scale: 1,
       transition: {
-        opacity: { duration: 1.2, ease: "easeInOut" },
-        scale: { duration: 1.8, ease: "easeOut" },
+        opacity: { duration: 1.2, ease: "easeInOut" as const },
+        scale: { duration: 1.8, ease: "easeOut" as const },
       },
     },
     exit: {
       opacity: 0,
-      transition: { duration: 1.2, ease: "easeInOut" },
+      transition: { duration: 1.2, ease: "easeInOut" as const },
     },
   };
 
