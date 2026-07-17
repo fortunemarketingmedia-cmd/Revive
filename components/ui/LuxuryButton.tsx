@@ -26,7 +26,7 @@ export default function LuxuryButton({
     "inline-flex items-center justify-center font-inter text-xs font-semibold uppercase tracking-widest rounded-full transition-all duration-500 overflow-hidden relative group disabled:opacity-50 disabled:pointer-events-none";
 
   const variants = {
-    primary: "bg-primary text-white border border-primary px-8 py-3.5 hover:bg-black hover:border-black hover:shadow-lg hover:scale-[1.02]",
+    primary: "bg-[#7C131F] text-white border border-[#7C131F] px-8 py-4 hover:bg-black hover:border-black hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-500",
     secondary: "bg-secondary text-primary border border-secondary px-8 py-3.5 hover:bg-black hover:text-white hover:border-black hover:shadow-md hover:scale-[1.02]",
     outline: "bg-transparent text-primary border border-primary/20 px-8 py-3.5 hover:bg-black hover:text-white hover:border-black hover:scale-[1.02]",
     text: "bg-transparent text-primary px-0 py-2 border-b border-transparent hover:border-primary rounded-none hover:text-accent1",

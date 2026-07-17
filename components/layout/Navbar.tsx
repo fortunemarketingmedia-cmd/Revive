@@ -34,7 +34,7 @@ export default function Navbar() {
   const linkActiveBorderClass = "bg-[#7C131F]";
 
   // Book Appointment CTA styles (Matches the light color CTA button in hero section, turns black on hover)
-  const ctaButtonClass = "text-[#7C131F] bg-white hover:bg-black hover:text-white hover:shadow-[0_10px_25px_rgba(0,0,0,0.25)]";
+  const ctaButtonClass = "text-white bg-[#7C131F] hover:bg-black hover:text-white shadow-[0_10px_30px_rgba(124,19,31,0.15)]";
 
   // Mobile hamburger menu button styles
   const hamburgerClass = "lg:hidden text-2xl text-[#7C131F] focus:outline-none hover:opacity-85 transition-opacity shrink-0";
@@ -133,7 +133,7 @@ export default function Navbar() {
               <Link
                 href="/contact?book=true"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-6 inline-flex items-center justify-center px-8 py-3.5 font-inter text-[10px] font-bold uppercase tracking-[0.2em] text-white bg-primary rounded-full shadow-lg hover:bg-black transition-all"
+                className="mt-6 inline-flex items-center justify-center px-8 py-4 font-inter text-xs font-bold uppercase tracking-widest text-white bg-[#7C131F] rounded-full shadow-[0_10px_30px_rgba(124,19,31,0.15)] hover:bg-black hover:scale-105 active:scale-95 transition-all duration-500"
               >
                 Book Appointment
               </Link>

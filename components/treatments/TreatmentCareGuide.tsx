@@ -180,7 +180,7 @@ export default function TreatmentCareGuide() {
                         <div>
                           <h4
                             className={`font-playfair text-base font-semibold text-heading transition-all duration-300 ${
-                              isChecked ? "line-through text-body/55" : ""
+                              isChecked ? "text-body/55" : ""
                             }`}
                           >
                             {item.title}

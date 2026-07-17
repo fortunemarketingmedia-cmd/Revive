@@ -3,62 +3,67 @@
 import AnimatedSectionTitle from "@/components/ui/AnimatedSectionTitle";
 import ReviewCard from "@/components/ui/ReviewCard";
 import { testimonials } from "@/lib/content/testimonials";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 export default function TestimonialCards() {
-  // Triple the list of testimonials to create a seamless infinite looping illusion
-  const loopedList = [...testimonials, ...testimonials, ...testimonials];
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "start", skipSnaps: false }
+  );
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   return (
     <section className="py-16 md:py-24 bg-background relative z-10 w-full overflow-hidden border-t border-border/80">
-      
-      {/* Self-contained CSS Marquee Loop Animation */}
-      <style>{`
-        @keyframes testimonial-scroll-lane {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-        .testimonial-lane-track {
-          display: flex;
-          width: max-content;
-          animation: testimonial-scroll-lane 75s linear infinite;
-        }
-        .testimonial-lane-track:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
-
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <AnimatedSectionTitle
           title="What Our Patients Say"
           subtitle="Real Testimonials"
         />
-      </div>
 
-      {/* Infinite Horizontal Loop Container - Single Lane */}
-      <div className="w-full relative py-6 mt-4">
+        <div className="relative w-full mt-12">
+          {/* Navigation Buttons */}
+          <button 
+            onClick={scrollPrev} 
+            className="absolute -left-4 md:-left-6 lg:-left-12 top-[45%] -translate-y-1/2 w-12 h-12 hidden md:flex items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] text-[#7C131F] hover:bg-[#7C131F] hover:text-white transition-all z-20"
+            aria-label="Previous slide"
+          >
+            <FiChevronLeft className="text-2xl" />
+          </button>
+          
+          <button 
+            onClick={scrollNext} 
+            className="absolute -right-4 md:-right-6 lg:-right-12 top-[45%] -translate-y-1/2 w-12 h-12 hidden md:flex items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] text-[#7C131F] hover:bg-[#7C131F] hover:text-white transition-all z-20"
+            aria-label="Next slide"
+          >
+            <FiChevronRight className="text-2xl" />
+          </button>
 
-        {/* Scrolling Lane track */}
-        <div className="w-full overflow-hidden">
-          <div className="testimonial-lane-track px-4">
-            {loopedList.map((test, idx) => (
-              <div
-                key={`${test.id}-${idx}`}
-                className="w-[310px] sm:w-[350px] md:w-[420px] px-3 shrink-0 select-none"
-              >
-                <ReviewCard
-                  testimonial={test}
-                  className="h-full transform hover:scale-[1.015] transition-all duration-300 shadow-luxury"
-                />
-              </div>
-            ))}
+          {/* Carousel Viewport */}
+          <div className="overflow-hidden cursor-grab active:cursor-grabbing px-2 py-4" ref={emblaRef}>
+            <div className="flex -ml-4">
+              {testimonials.map((test) => (
+                <div
+                  key={test.id}
+                  className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4 min-w-0"
+                >
+                  <ReviewCard
+                    testimonial={test}
+                    className="h-full transform hover:scale-[1.015] transition-all duration-300 shadow-luxury"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-
     </section>
   );
 }

@@ -106,9 +106,9 @@ export default function BookingPopup() {
             {/* CTA Button */}
             <button
               onClick={handleAction}
-              className="w-full flex items-center justify-center gap-2 bg-primary text-background font-inter text-sm font-semibold px-5 py-3.5 rounded-full hover:bg-black hover:text-white transition-all duration-300 group shadow-sm"
+              className="w-full group relative flex items-center justify-center gap-2 px-8 py-4 font-inter text-xs font-bold uppercase tracking-widest text-white bg-[#7C131F] rounded-full shadow-[0_10px_30px_rgba(124,19,31,0.15)] transition-all duration-500 hover:bg-black hover:text-white hover:scale-105 active:scale-95"
             >
-              <FiCalendar className="text-base" />
+              <FiCalendar className="text-base shrink-0" />
               <span>Book Appointment Now</span>
               <FiArrowRight className="text-base transition-transform duration-300 group-hover:translate-x-1" />
             </button>

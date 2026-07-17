@@ -60,9 +60,9 @@ export default function GalleryHero() {
         >
           <Link
             href="/contact"
-            className="flex items-center justify-center gap-2 bg-black text-white font-inter text-sm font-semibold px-6 py-3.5 rounded-full shadow-luxury hover:bg-[#7C131F] hover:text-white transition-all duration-300 group"
+            className="group relative flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto font-inter text-xs font-bold uppercase tracking-widest text-white bg-[#7C131F] rounded-full shadow-[0_10px_30px_rgba(124,19,31,0.15)] transition-all duration-500 hover:bg-black hover:text-white hover:scale-105 active:scale-95"
           >
-            <FiCalendar className="text-base" />
+            <FiCalendar className="text-base shrink-0" />
             <span>Book Transformation</span>
             <FiArrowRight className="text-base transition-transform duration-300 group-hover:translate-x-1" />
           </Link>

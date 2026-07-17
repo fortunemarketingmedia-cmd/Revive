@@ -106,8 +106,10 @@ Before founding Revive, Dr. Sonanis spent six formative years at Kaya Skin Clini
 
 Dr. Sonanis is a proud member of the Indian Association of Dermatologists, Venereologists and Leprologists (IADVL) and the Indian Medical Association (IMA). Her clinical focus includes complex autoimmune conditions like Vitiligo and Psoriasis, hair loss disorders, and advanced aesthetic procedures including Botox, Dermal Fillers, HIFU, and Platelet-Rich Plasma (PRP) therapy.
 
+In addition to leading Revive Skin Clinic in Nashik, Dr. Sonanis serves as a visiting Dermatologist at Skin and Clinic in Bandra, Mumbai, bringing her specialized expertise in aesthetic medicine and clinical dermatology to a broader demographic.
+
 At Revive, she has created a space where world-class dermatological expertise meets warm, personalised attention — because every patient deserves to feel their best in their own skin.`,
-  shortBio: `Board-certified Dermatologist with FCPS & DNB from KEM Hospital, Mumbai. Founder of Revive with 15+ years of clinical experience spanning medical dermatology, trichology, and aesthetic medicine.`,
+  shortBio: `Board-certified Dermatologist with FCPS & DNB from KEM Hospital, Mumbai. Founder of Revive with 15+ years of clinical experience, and visiting Dermatologist at Skin and Clinic in Bandra, Mumbai.`,
   credentials: [
     {
       degree: "MBBS",
