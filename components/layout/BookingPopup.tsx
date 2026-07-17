@@ -70,7 +70,7 @@ export default function BookingPopup() {
           <div className="space-y-4">
             <div className="flex justify-between items-start">
               <div>
-                <span className="font-inter text-xs font-bold uppercase tracking-widest text-[#B45309]">
+                <span className="font-inter text-xs font-bold uppercase tracking-widest text-[#7C131F]">
                   Clinical Consultation
                 </span>
                 <h3 className="font-playfair text-2xl font-bold text-heading mt-1.5 leading-snug">
@@ -88,7 +88,7 @@ export default function BookingPopup() {
 
             {/* Premium Clinic Philosophy Quote (Fills height beautifully) */}
             <div className="py-2">
-              <p className="font-playfair italic text-sm md:text-base text-body/90 leading-relaxed border-l-2 border-[#B45309]/30 pl-4">
+              <p className="font-playfair italic text-sm md:text-base text-body/90 leading-relaxed border-l-2 border-[#7C131F]/30 pl-4">
                 "Advanced clinical dermatology meets personalized science to restore your skin's natural health and radiance."
               </p>
               <span className="font-inter text-[10px] text-body/65 tracking-wider uppercase font-semibold mt-2 block pl-4">

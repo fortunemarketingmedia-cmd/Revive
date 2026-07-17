@@ -57,7 +57,7 @@ export default function TreatmentCategories() {
                 <div className="relative z-20 p-6 md:p-8 pt-12 flex flex-col w-full text-white">
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-playfair text-xl md:text-2xl text-white font-medium tracking-tight group-hover:text-[#FDBD0E] transition-colors">
+                      <h3 className="font-playfair text-xl md:text-2xl text-white font-medium tracking-tight group-hover:text-[#7C131F] transition-colors">
                         {category.label}
                       </h3>
                       <span className="font-inter text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white bg-white/20 px-3 py-1 rounded-full border border-white/20">
@@ -70,10 +70,10 @@ export default function TreatmentCategories() {
                   </div>
 
                   <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span className="font-inter text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#FDBD0E] group-hover:text-white transition-colors">
+                    <span className="font-inter text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#7C131F] group-hover:text-white transition-colors">
                       View Treatments
                     </span>
-                    <span className="w-8 h-8 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white group-hover:text-black group-hover:bg-[#FDBD0E] group-hover:border-[#FDBD0E] transition-all duration-300">
+                    <span className="w-8 h-8 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white group-hover:text-black group-hover:bg-[#7C131F] group-hover:border-[#7C131F] transition-all duration-300">
                       <FiArrowRight className="text-sm transition-transform duration-300 group-hover:translate-x-0.5" />
                     </span>
                   </div>

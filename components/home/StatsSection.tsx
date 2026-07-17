@@ -139,7 +139,7 @@ export default function StatsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="bg-[#7C131F]/5 border border-[#7C131F]/10 rounded-2xl p-6 md:p-8 flex flex-row items-center justify-around w-full shadow-inner"
+              className="bg-[#F06722]/10 border border-[#F06722]/20 rounded-2xl p-6 md:p-8 flex flex-row items-center justify-around w-full shadow-inner"
             >
               <div className="text-center">
                 <h4 className="font-playfair text-xl sm:text-2xl md:text-3xl font-bold text-[#7C131F]">

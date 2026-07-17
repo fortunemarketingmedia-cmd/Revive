@@ -28,16 +28,16 @@ export default function Navbar() {
   const headerBgClass = "bg-[#FDBD0E]/95 backdrop-blur-xl py-6 px-6 sm:px-12 shadow-[0_20px_50px_rgba(253,189,14,0.15)] border-none rounded-b-[2rem]";
 
   // Navigation text styles: always primary burgundy on gold
-  const linkTextClass = "text-primary/85 hover:text-primary";
+  const linkTextClass = "text-[#7C131F]/85 hover:text-[#7C131F]";
 
   // Navigation indicator border styles
-  const linkActiveBorderClass = "bg-primary";
+  const linkActiveBorderClass = "bg-[#7C131F]";
 
   // Book Appointment CTA styles (Matches the light color CTA button in hero section, turns black on hover)
-  const ctaButtonClass = "text-primary bg-white hover:bg-black hover:text-white hover:shadow-[0_10px_25px_rgba(0,0,0,0.25)]";
+  const ctaButtonClass = "text-[#7C131F] bg-white hover:bg-black hover:text-white hover:shadow-[0_10px_25px_rgba(0,0,0,0.25)]";
 
   // Mobile hamburger menu button styles
-  const hamburgerClass = "lg:hidden text-2xl text-primary focus:outline-none hover:opacity-85 transition-opacity shrink-0";
+  const hamburgerClass = "lg:hidden text-2xl text-[#7C131F] focus:outline-none hover:opacity-85 transition-opacity shrink-0";
 
   return (
     <>
@@ -122,7 +122,7 @@ export default function Navbar() {
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`font-inter text-sm font-bold uppercase tracking-[0.2em] transition-colors ${
-                      isActive ? "text-primary font-extrabold" : "text-primary/70 hover:text-primary"
+                      isActive ? "text-[#7C131F] font-extrabold" : "text-[#7C131F]/70 hover:text-[#7C131F]"
                     }`}
                   >
                     {link.label}

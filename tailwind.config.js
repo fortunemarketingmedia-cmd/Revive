@@ -9,15 +9,15 @@ module.exports = {
     extend: {
       colors: {
         primary: "#7C131F",
-        secondary: "#F7BDA9",
-        accent1: "#DC1F26",
-        accent2: "#F06722",
+        secondary: "#F06722",
+        accent1: "#7C131F",
+        accent2: "#7C131F",
         heading: "#000000",
         body: "#4A4A4A",
-        background: "#FFFDFB",
-        altbg: "#FFF4EF",
-        border: "rgba(124,19,31,0.08)",
-        dark: "#0D0507",
+        background: "#FFFFFF",
+        altbg: "#FAD7C9",
+        border: "rgba(124,19,31,0.1)",
+        dark: "#0D0505",
       },
       fontFamily: {
         playfair: ["var(--font-jakarta)", "system-ui", "sans-serif"],
@@ -26,7 +26,7 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "hero-gradient": "linear-gradient(135deg, #FFFDFB 0%, #FFF4EF 50%, #F7BDA9 100%)",
+        "hero-gradient": "linear-gradient(135deg, #FFFFFF 0%, #FFF5F2 50%, #FAD7C9 100%)",
       },
       animation: {
         "marquee": "marquee 30s linear infinite",

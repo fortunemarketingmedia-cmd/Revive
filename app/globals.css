@@ -7,14 +7,14 @@
   --font-jakarta: var(--font-jakarta), sans-serif;
   --font-inter: var(--font-inter), sans-serif;
   --primary: #7C131F;
-  --secondary: #F7BDA9;
-  --accent1: #DC1F26;
-  --accent2: #F06722;
+  --secondary: #F06722;
+  --accent1: #7C131F;
+  --accent2: #7C131F;
   --heading: #000000;
   --body: #4A4A4A;
-  --background: #FFFDFB;
-  --altbg: #FFF4EF;
-  --dark: #0D0507;
+  --background: #FFFFFF;
+  --altbg: #FAD7C9;
+  --dark: #0D0505;
 }
 
 * {

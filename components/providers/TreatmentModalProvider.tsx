@@ -233,7 +233,7 @@ export default function TreatmentModalProvider({ children }: { children: React.R
                 
                 {/* Overlaid tagline on the image column */}
                 <div className="absolute bottom-6 left-6 right-6 z-20 text-white">
-                  <span className="font-inter text-[9px] uppercase tracking-widest text-[#FDBD0E] font-bold">
+                  <span className="font-inter text-[9px] uppercase tracking-widest text-[#7C131F] font-bold">
                     {activeTreatment.categoryLabel}
                   </span>
                   <h4 className="font-playfair text-xl md:text-2xl font-semibold leading-tight text-white mt-1">

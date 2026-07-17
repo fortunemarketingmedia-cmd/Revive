@@ -137,7 +137,7 @@ export default function ClinicImages() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-inter text-xs font-semibold tracking-widest text-[#FDBD0E] uppercase mb-2 block"
+          className="font-inter text-xs font-semibold tracking-widest text-[#7C131F] uppercase mb-2 block"
         >
           Inside Revive Skin Clinics
         </motion.span>
@@ -154,7 +154,7 @@ export default function ClinicImages() {
 
         <div className="w-full flex items-center justify-center mt-4">
           <div className="h-[1px] bg-white/20 w-16" />
-          <span className="w-1.5 h-1.5 mx-2 rounded-full bg-[#FDBD0E]" />
+          <span className="w-1.5 h-1.5 mx-2 rounded-full bg-[#7C131F]" />
           <div className="h-[1px] bg-white/20 w-16" />
         </div>
       </div>
@@ -185,7 +185,7 @@ export default function ClinicImages() {
                 onClick={() => handleDotClick(idx)}
                 className={`h-2.5 rounded-full transition-all duration-500 ease-out focus:outline-none ${
                   isActive
-                    ? "w-8 bg-[#FDBD0E] shadow-sm"
+                    ? "w-8 bg-[#7C131F] shadow-sm"
                     : "w-2.5 bg-white/30 hover:bg-white/60"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
@@ -198,14 +198,14 @@ export default function ClinicImages() {
       {/* 3. EDGE MANUAL NAVIGATION ARROWS */}
       <button
         onClick={handlePrev}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-25 w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-white/10 flex items-center justify-center text-white text-2xl hover:bg-[#FDBD0E] hover:border-[#FDBD0E] hover:text-black transition-all duration-300 shadow-lg"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-25 w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-white/10 flex items-center justify-center text-white text-2xl hover:bg-[#7C131F] hover:border-[#7C131F] hover:text-black transition-all duration-300 shadow-lg"
         aria-label="Previous slide"
       >
         <FiChevronLeft />
       </button>
       <button
         onClick={handleNext}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-25 w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-white/10 flex items-center justify-center text-white text-2xl hover:bg-[#FDBD0E] hover:border-[#FDBD0E] hover:text-black transition-all duration-300 shadow-lg"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-25 w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-white/10 flex items-center justify-center text-white text-2xl hover:bg-[#7C131F] hover:border-[#7C131F] hover:text-black transition-all duration-300 shadow-lg"
         aria-label="Next slide"
       >
         <FiChevronRight />

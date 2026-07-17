@@ -46,10 +46,10 @@ export default function TreatmentCard({ treatment, index }: TreatmentCardProps) 
 
       {/* Text Content Overlay (Smoothly integrated on top of the blend) */}
       <div className="relative z-20 p-6 md:p-8 pt-12 flex flex-col w-full text-white">
-        <span className="text-[#F7BDA9] text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1.5 block">
+        <span className="text-[#F06722] text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1.5 block">
           {treatment.tagline}
         </span>
-        <h3 className="font-playfair text-xl md:text-2xl text-white font-medium tracking-tight mb-2 transition-colors group-hover:text-[#FDBD0E]">
+        <h3 className="font-playfair text-xl md:text-2xl text-white font-medium tracking-tight mb-2 transition-colors group-hover:text-[#7C131F]">
           {treatment.name}
         </h3>
         <p className="font-inter text-xs md:text-sm text-white/75 leading-relaxed mb-6 line-clamp-3">
@@ -58,10 +58,10 @@ export default function TreatmentCard({ treatment, index }: TreatmentCardProps) 
 
         {/* Action Button */}
         <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-          <span className="font-inter text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#FDBD0E] group-hover:text-white transition-colors">
+          <span className="font-inter text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#7C131F] group-hover:text-white transition-colors">
             Learn More
           </span>
-          <span className="w-8 h-8 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white group-hover:text-black group-hover:bg-[#FDBD0E] group-hover:border-[#FDBD0E] transition-all duration-300">
+          <span className="w-8 h-8 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white group-hover:text-black group-hover:bg-[#7C131F] group-hover:border-[#7C131F] transition-all duration-300">
             <FiArrowRight className="text-sm transition-transform duration-300 group-hover:translate-x-0.5" />
           </span>
         </div>

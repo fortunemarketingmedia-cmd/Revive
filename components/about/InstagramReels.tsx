@@ -190,7 +190,7 @@ export default function InstagramReels() {
 
                         {/* Bottom Details */}
                         <div>
-                          <h4 className="font-playfair text-base font-semibold leading-tight text-white mb-2 group-hover:text-[#FDBD0E] transition-colors">
+                          <h4 className="font-playfair text-base font-semibold leading-tight text-white mb-2 group-hover:text-[#7C131F] transition-colors">
                             {reel.title}
                           </h4>
                           <p className="font-inter text-[10px] text-white/60 tracking-wider">

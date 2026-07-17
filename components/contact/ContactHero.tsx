@@ -8,7 +8,7 @@ import { FiArrowRight, FiCalendar } from "react-icons/fi";
 
 export default function ContactHero() {
   return (
-    <section className="relative min-h-[60vh] flex items-center pt-32 pb-20 md:pt-44 md:pb-28 bg-[#FDFBF7] overflow-hidden border-b border-border w-full">
+    <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 md:pt-44 md:pb-28 bg-white overflow-hidden border-b border-border w-full">
       {/* Full-bleed background image */}
       <Image
         src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80"
@@ -20,14 +20,14 @@ export default function ContactHero() {
       />
 
       {/* Left-to-right blending mask overlay limited to 40% width */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#FDFBF7] via-[#FDFBF7]/85 via-[25%] to-[#FDFBF7]/0 to-[40%] z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 via-[25%] to-white/50 to-[25%] z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-20 flex flex-col items-start text-left">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-inter text-xs md:text-sm font-semibold tracking-widest text-[#B45309] uppercase bg-[#B45309]/5 border border-[#B45309]/20 px-4 py-2 rounded-full mb-6 inline-block"
+          className="font-inter text-xs md:text-sm font-semibold tracking-widest text-[#7C131F] uppercase bg-[#7C131F]/5 border border-[#7C131F]/20 px-4 py-2 rounded-full mb-6 inline-block"
         >
           Contact & Booking • Nashik Branches
         </motion.span>
@@ -39,7 +39,7 @@ export default function ContactHero() {
           className="font-playfair text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.15] mb-6"
         >
           Begin Your Skin <br />
-          <span className="italic text-[#B45309] font-light">Journey With Us.</span>
+          <span className="italic text-[#7C131F] font-light">Journey With Us.</span>
         </motion.h1>
 
         <motion.p
@@ -60,7 +60,7 @@ export default function ContactHero() {
         >
           <a
             href="#booking-portal"
-            className="flex items-center justify-center gap-2 bg-black text-white font-inter text-sm font-semibold px-6 py-3.5 rounded-full shadow-luxury hover:bg-[#B45309] hover:text-white transition-all duration-300 group"
+            className="flex items-center justify-center gap-2 bg-black text-white font-inter text-sm font-semibold px-6 py-3.5 rounded-full shadow-luxury hover:bg-[#7C131F] hover:text-white transition-all duration-300 group"
           >
             <FiCalendar className="text-base" />
             <span>Intake Portal</span>
