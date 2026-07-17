@@ -17,7 +17,7 @@ export default function TreatmentsHero() {
         priority
         sizes="100vw"
         className="object-cover object-center z-0"
-      />
+      /> 
 
       {/* Left-to-right blending mask overlay limited to 40% width */}
       <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 via-[25%] to-white/0 to-[40%] z-10 pointer-events-none" />
