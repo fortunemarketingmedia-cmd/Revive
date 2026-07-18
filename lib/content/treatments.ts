@@ -23,7 +23,7 @@ export const treatmentCategories = [
     description: "Targeted medical dermatology for conditions affecting your skin's health and appearance.",
     icon: "✦",
     count: 8,
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
+    image: "/images/home/skin-treatment.webp",
   },
   {
     id: "hair",
@@ -31,7 +31,7 @@ export const treatmentCategories = [
     description: "Advanced trichology solutions for hair loss, scalp health, and hair restoration.",
     icon: "◈",
     count: 4,
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
+    image: "/images/home/hair-treatment.webp",
   },
   {
     id: "laser",
@@ -47,7 +47,7 @@ export const treatmentCategories = [
     description: "Non-surgical aesthetic procedures to restore volume, smooth lines, and lift skin.",
     icon: "◇",
     count: 5,
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80",
+    image: "/images/home/anti-aging.webp",
   },
 ];
 

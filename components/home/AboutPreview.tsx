@@ -93,7 +93,7 @@ export default function AboutPreview() {
               className="relative w-full h-[350px] sm:h-[450px] lg:h-full rounded-3xl overflow-hidden shadow-luxury border border-border bg-altbg"
             >
               <Image
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80"
+                src="/images/home/1stimg.webp"
                 alt="Revive Skin Clinic interior"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 450px"

@@ -100,7 +100,7 @@ export default function WhyChooseUs() {
               className="relative w-[280px] h-[380px] sm:w-[310px] sm:h-[430px] rounded-full overflow-hidden border-8 border-white shadow-[0_15px_45px_rgba(0,0,0,0.12)] bg-altbg"
             >
               <Image
-                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80"
+                src="/images/home/oval.webp"
                 alt="Personalized aesthetic care at Revive"
                 fill
                 priority

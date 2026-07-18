@@ -27,7 +27,7 @@ export default function CTABanner() {
               className="relative w-full aspect-[4/3] max-w-[420px] rounded-[2rem] rounded-tr-[5.5rem] rounded-bl-[5.5rem] overflow-hidden border border-border shadow-luxury bg-altbg"
             >
               <Image
-                src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=600&q=80"
+                src="/images/home/guide.webp"
                 alt="Premium skincare products at Revive Clinic"
                 fill
                 sizes="(max-width: 768px) 100vw, 420px"

@@ -23,7 +23,7 @@ export default function DoctorPreview() {
               className="relative w-full aspect-[4/5] max-w-[400px] rounded-[30px] overflow-hidden shadow-luxury border border-border bg-altbg"
             >
               <Image
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80"
+                src="/images/home/DR.webp"
                 alt="Dr. Shraddha Sonanis"
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
