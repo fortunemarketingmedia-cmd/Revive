@@ -11,7 +11,7 @@ export default function TreatmentsHero() {
     <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 md:pt-44 md:pb-28 bg-white overflow-hidden border-b border-border w-full">
       {/* Full-bleed background image */}
       <Image
-        src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1600&q=80"
+        src="/images/treatments/treatment-hero.webp"
         alt="Revive Advanced Dermatological Suite"
         fill
         priority
@@ -48,7 +48,8 @@ export default function TreatmentsHero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-inter text-sm md:text-base text-black/80 font-medium leading-relaxed max-w-2xl mb-8"
         >
-          Science-backed solutions for skin, hair, anti-ageing, and clinical lasers, calibrated for Indian skin.
+          Science-backed solutions for skin, hair, anti-ageing, and clinical<br></br>
+          lasers, calibrated for Indian skin.
         </motion.p>
 
         {/* CTAs */}

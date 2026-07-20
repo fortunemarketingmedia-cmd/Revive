@@ -27,7 +27,7 @@ export default function DoctorProfile() {
               className="relative w-full aspect-[4/5] max-w-[420px] rounded-[30px] overflow-hidden shadow-luxury border border-border bg-altbg"
             >
               <Image
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80"
+                src="/images/about/DR3.webp"
                 alt="Dr. Shraddha Sonanis"
                 fill
                 priority
@@ -119,7 +119,7 @@ export default function DoctorProfile() {
               className="relative w-full aspect-[4/5] max-w-[420px] rounded-[30px] overflow-hidden shadow-luxury border border-border bg-altbg"
             >
               <Image
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80"
+                src="/images/about/DR2.webp"
                 alt="Revive Skin Clinic consultation and laser rooms"
                 fill
                 sizes="(max-width: 768px) 100vw, 420px"

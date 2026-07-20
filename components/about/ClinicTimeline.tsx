@@ -33,7 +33,7 @@ export default function ClinicTimeline() {
       {/* Background Image Wrapper (Section only) */}
       <div className="absolute inset-0 -z-20 w-full h-full">
         <Image
-          src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1200&q=80"
+          src="/images/about/bgclinic.webp"
           alt="Revive Clinic Luxury Interior Backdrop"
           fill
           priority

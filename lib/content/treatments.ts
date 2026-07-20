@@ -39,7 +39,7 @@ export const treatmentCategories = [
     description: "USFDA-approved laser technology for hair reduction, skin rejuvenation, and scar removal.",
     icon: "◉",
     count: 6,
-    image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
   },
   {
     id: "anti-ageing",
@@ -65,7 +65,7 @@ export const treatments: Treatment[] = [
     procedure: ["Skin analysis and type assessment", "Customised prescription regimen (topical/oral)", "In-clinic procedures (peels, laser, or extractions as needed)", "Scheduled follow-ups to track progress", "Long-term maintenance plan"],
     recovery: "Minimal to none for medical management. 1–3 days mild redness after procedures.",
     sessions: "4–8 sessions depending on severity",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80",
+    image: "/images/treatments/acne_clinical.webp",
     icon: "✦",
   },
   {
@@ -80,7 +80,7 @@ export const treatments: Treatment[] = [
     procedure: ["Detailed skin type and pigmentation mapping", "Prescription-grade topical lightening agents", "Chemical peels (series of 6–8)", "Laser photofacial or Q-switched laser sessions", "Strict SPF and aftercare protocol"],
     recovery: "Minimal peeling for 2–3 days after peels. Laser sessions may cause mild redness for 24 hours.",
     sessions: "6–10 sessions",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80",
+    image: "/images/treatments/pigmentation_clinical.webp",
     icon: "◈",
   },
   {
@@ -94,7 +94,7 @@ export const treatments: Treatment[] = [
     benefits: ["Reduced plaque thickness and redness", "Fewer and less severe flares", "Improved quality of life", "Long-term remission strategies", "Compassionate, ongoing support"],
     procedure: ["Comprehensive skin and lifestyle evaluation", "Topical prescription therapies", "Systemic therapy when indicated", "Phototherapy assessment", "Regular monitoring and adjustment"],
     recovery: "Ongoing management; most patients see significant improvement within 4–8 weeks.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80",
+    image: "/images/treatments/psoriasis_clinical.webp",
     icon: "◉",
   },
   {
@@ -108,7 +108,7 @@ export const treatments: Treatment[] = [
     benefits: ["Repigmentation of affected areas", "Stabilisation of spreading", "Improved cosmetic appearance", "Evidence-based treatment protocols", "Compassionate, long-term care"],
     procedure: ["Vitiligo mapping and stability assessment", "Topical therapy initiation", "Targeted NBUVB phototherapy if required", "Surgical options (skin grafting, melanocyte transplant) for stable cases", "Regular progress review"],
     recovery: "Non-invasive therapies have no downtime. Surgical options require 1–2 weeks recovery.",
-    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&q=80",
+    image: "/images/treatments/vitiligo_clinical.webp",
     icon: "◇",
   },
   {
@@ -122,7 +122,7 @@ export const treatments: Treatment[] = [
     benefits: ["Rapid symptom relief", "Complete eradication of infection", "Prevention of recurrence", "Treatment for resistant or chronic cases", "Guidance on hygiene and prevention"],
     procedure: ["Skin examination and diagnosis", "Swab/culture if needed", "Topical antifungal prescription", "Systemic therapy for extensive or nail infections", "Follow-up to ensure complete resolution"],
     recovery: "No downtime. Most infections clear within 2–6 weeks of treatment.",
-    image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80",
+    image: "/images/treatments/fungal_infections_clinical.webp",
     icon: "✦",
   },
   {
@@ -136,7 +136,7 @@ export const treatments: Treatment[] = [
     benefits: ["Identification of allergy triggers", "Rapid relief from itching and inflammation", "Prevention of flares", "Long-term management strategies", "Tailored to your skin and lifestyle"],
     procedure: ["Detailed allergy history and examination", "Patch testing or specific IgE testing", "Prescription therapy (antihistamines, topicals)", "Trigger identification and avoidance counselling", "Follow-up monitoring"],
     recovery: "No downtime. Relief is typically seen within days of initiating treatment.",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80",
+    image: "/images/treatments/skin_allergy_clinical.webp",
     icon: "◈",
   },
   {
@@ -150,7 +150,7 @@ export const treatments: Treatment[] = [
     benefits: ["Clearance of nail infection", "Improved nail appearance", "Relief from discomfort or pain", "Accurate diagnosis of the underlying cause", "Prevention of spread to other nails"],
     procedure: ["Nail examination and clinical diagnosis", "Nail clipping/scraping for culture if indicated", "Prescription antifungal (topical and/or oral)", "Treatment of associated conditions (e.g., psoriasis)", "Regular progress monitoring"],
     recovery: "No downtime. Complete nail regrowth takes 3–6 months.",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80",
+    image: "/images/treatments/nail.webp",
     icon: "◉",
   },
   {
@@ -165,7 +165,7 @@ export const treatments: Treatment[] = [
     procedure: ["Scar assessment and classification", "Intralesional corticosteroid injections", "Laser sessions for residual redness/thickness", "Surgical excision (large keloids)", "Pressure therapy and post-treatment care"],
     recovery: "Mild swelling after injections for 24–48 hours. Full results seen over 3–6 months.",
     sessions: "3–6 injection sessions, 4–6 weeks apart",
-    image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80",
+    image: "/images/treatments/keloid.webp",
     icon: "◇",
   },
   // HAIR TREATMENTS
@@ -181,7 +181,7 @@ export const treatments: Treatment[] = [
     procedure: ["Trichoscopy (scalp examination)", "Blood investigations to identify cause", "Prescription medications (topical/oral)", "In-clinic treatment (PRP, Mesotherapy)", "Regular follow-up every 6–8 weeks"],
     recovery: "No downtime for medical management. Minor scalp tenderness for 24 hours after PRP/Mesotherapy.",
     sessions: "6–12 sessions over 3–6 months",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
+    image: "/images/treatments/hairloss.webp",
     icon: "◈",
   },
   {
@@ -196,7 +196,7 @@ export const treatments: Treatment[] = [
     procedure: ["Blood draw (15–20 ml)", "Centrifugation to prepare PRP", "Topical anaesthetic application", "PRP injection into scalp", "Session takes approximately 45 minutes"],
     recovery: "Mild scalp tenderness and redness for 24–48 hours. Resume normal activities same day.",
     sessions: "6 sessions, one month apart; then quarterly maintenance",
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80",
+    image: "/images/treatments/PRP.webp",
     icon: "◉",
   },
   {
@@ -211,7 +211,7 @@ export const treatments: Treatment[] = [
     procedure: ["Scalp assessment and mapping", "Preparation of customised mesotherapy cocktail", "Fine needle microinjections across scalp", "Soothing scalp massage post-procedure", "Session takes approximately 30–45 minutes"],
     recovery: "Minimal — mild scalp tenderness for 24 hours. Avoid washing hair for 24 hours post-session.",
     sessions: "8–10 sessions, bi-weekly initially then monthly",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
+    image: "/images/treatments/meso.webp",
     icon: "◇",
   },
   {
@@ -225,7 +225,7 @@ export const treatments: Treatment[] = [
     benefits: ["Elimination of flaking and itching", "Balanced scalp microbiome", "Prevention of recurrence", "Improved scalp and hair health", "Personalised care plan"],
     procedure: ["Scalp trichoscopy", "Identification of causative factors", "Prescription medicated shampoo/treatment", "Topical antifungal or anti-inflammatory therapy", "Scalp care and diet counselling"],
     recovery: "No downtime. Improvement typically seen within 2–4 weeks.",
-    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
+    image: "/images/treatments/dandruff.webp",
     icon: "✦",
   },
   // LASER TREATMENTS
@@ -241,7 +241,7 @@ export const treatments: Treatment[] = [
     procedure: ["Consultation and skin type assessment", "Test patch 48 hours before first session", "Shaving of treatment area", "Laser application with cooling handpiece", "Post-treatment SPF and soothing care"],
     recovery: "Mild redness for 2–4 hours post-session. Resume normal activities immediately.",
     sessions: "6–8 sessions per body part, 4–6 weeks apart",
-    image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80",
+    image: "/images/treatments/laser_hair_reduction.webp",
     icon: "◉",
   },
   {
@@ -256,7 +256,7 @@ export const treatments: Treatment[] = [
     procedure: ["Skin cleansing and eye protection", "Laser application across face and neck", "Cooling and soothing mask post-treatment", "SPF application", "Session takes 30–45 minutes"],
     recovery: "Mild warmth and flushing for a few hours. Full activities resumed immediately.",
     sessions: "4–6 sessions for optimal results; monthly maintenance",
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80",
+    image: "/images/treatments/laser_photo_facial.webp",
     icon: "◈",
   },
   {
@@ -271,7 +271,7 @@ export const treatments: Treatment[] = [
     procedure: ["Tattoo assessment (size, colour, depth, age)", "Test spot", "Laser pulses applied to tattoo", "Cooling and soothing dressing", "Post-care instructions and SPF"],
     recovery: "Mild redness, swelling, and pinpoint bleeding for 24–48 hours. Avoid sun exposure between sessions.",
     sessions: "5–12 sessions depending on tattoo size, colour, and depth",
-    image: "https://images.unsplash.com/photo-1532667449560-72a95c8d381b?w=800&q=80",
+    image: "/images/treatments/tattoo.webp",
     icon: "◇",
   },
   {
@@ -285,7 +285,7 @@ export const treatments: Treatment[] = [
     benefits: ["Clean, precise removal", "Minimal scarring", "Quick recovery", "No stitches required", "Multiple lesions treatable in one session"],
     procedure: ["Clinical assessment of all lesions", "Topical anaesthetic application", "Laser or RF ablation", "Dressing applied", "Post-care instructions"],
     recovery: "Small scab forms and falls off within 7–10 days. Avoid picking.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80",
+    image: "/images/treatments/moles.webp",
     icon: "✦",
   },
   {
@@ -300,7 +300,7 @@ export const treatments: Treatment[] = [
     procedure: ["Skin cleansing and eye protection", "Carbon lotion application (wait 10 mins)", "Laser passes over skin (carbon vaporisation)", "Cooling mask", "SPF and serum application"],
     recovery: "None. Immediate return to activities and makeup.",
     sessions: "Single session for special events; monthly sessions for ongoing results",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
+    image: "/images/treatments/charcoal.webp",
     icon: "◈",
   },
   {
@@ -315,7 +315,7 @@ export const treatments: Treatment[] = [
     procedure: ["Scar assessment and grading", "Topical anaesthetic cream (1 hour)", "Er:YAG laser resurfacing session", "Cooling and soothing mask", "Post-care regimen with SPF"],
     recovery: "3–5 days of redness and mild peeling. Strict SPF required for 4 weeks post-treatment.",
     sessions: "4–6 sessions, 4 weeks apart",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80",
+    image: "/images/treatments/acne_scar.webp",
     icon: "◉",
   },
   // ANTI-AGEING
@@ -331,7 +331,7 @@ export const treatments: Treatment[] = [
     procedure: ["Consultation and muscle mapping", "Cleansing and marking injection points", "Precise toxin injections", "Post-injection aftercare instructions", "Review appointment at 2 weeks"],
     recovery: "No downtime. Avoid lying down, exercise, or alcohol for 4 hours post-injection.",
     sessions: "Single session; repeat every 4–6 months",
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80",
+    image: "/images/treatments/botox.webp",
     icon: "◇",
   },
   {
@@ -346,7 +346,7 @@ export const treatments: Treatment[] = [
     procedure: ["Facial assessment and treatment planning", "Topical anaesthetic or ice cooling", "Precise filler injection", "Sculpting and moulding", "Post-care instructions and review at 2 weeks"],
     recovery: "Mild swelling and bruising for 2–5 days. Most return to activities the same day.",
     sessions: "Single session; lasts 12–18 months",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80",
+    image: "/images/treatments/derma.webp",
     icon: "✦",
   },
   {
@@ -361,7 +361,7 @@ export const treatments: Treatment[] = [
     procedure: ["Facial assessment and mapping", "Ultrasound gel application", "HIFU transducer passes across treatment zones", "Cooling and soothing care", "Session takes 60–90 minutes"],
     recovery: "Minimal — mild tingling and temporary redness. Return to activities same day.",
     sessions: "Single session; results last 12–18 months; annual maintenance recommended",
-    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&q=80",
+    image: "/images/treatments/hifu.webp",
     icon: "◈",
   },
   {
@@ -376,7 +376,7 @@ export const treatments: Treatment[] = [
     procedure: ["Skin assessment and peel selection", "Cleansing and degreasing", "Peel application (10–20 minutes)", "Neutralisation and removal", "Soothing mask and SPF"],
     recovery: "Superficial peels: 2–3 days mild flaking. Medium peels: 5–7 days visible peeling.",
     sessions: "Series of 6 peels, 2–3 weeks apart",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
+    image: "/images/treatments/chemical.webp",
     icon: "◉",
   },
   {
@@ -391,7 +391,7 @@ export const treatments: Treatment[] = [
     procedure: ["Assessment of earlobe damage", "Local anaesthesia injection", "Excision of edges and precise suturing", "Dressing applied", "Suture removal at 7 days"],
     recovery: "Mild swelling for 2–3 days. Sutures removed at 7 days. Re-piercing possible after 6–8 weeks.",
     sessions: "Single session",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80",
+    image: "/images/treatments/ear.webp",
     icon: "◇",
   },
 ];

@@ -11,7 +11,7 @@ export default function AboutHero() {
     <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 md:pt-44 md:pb-28 bg-white overflow-hidden border-b border-border w-full">
       {/* Full-bleed background image */}
       <Image
-        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=80"
+        src="/images/about/about-hero2.webp"
         alt="Revive Clinical Suite Interior"
         fill
         priority
@@ -19,8 +19,8 @@ export default function AboutHero() {
         className="object-cover object-center z-0"
       />
 
-      {/* Left-to-right blending mask overlay limited to 40% width */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 via-[25%] to-white/50 to-[25%] z-10 pointer-events-none" />
+      {/* Left-to-right blending mask overlay for optimal text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-[35%] to-white/0 to-[65%] z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-20 flex flex-col items-start text-left">
         <motion.span
@@ -48,7 +48,8 @@ export default function AboutHero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-inter text-sm md:text-base text-black/80 font-medium leading-relaxed max-w-2xl mb-8"
         >
-          Nashik's premier sanctuary for advanced clinical dermatology and aesthetic science led by Dr. Shraddha Sonanis.
+          Nashik's premier sanctuary for advanced clinical dermatology and<br></br>
+          aesthetic science led by Dr. Shraddha Sonanis.
         </motion.p>
 
         {/* CTAs */}
