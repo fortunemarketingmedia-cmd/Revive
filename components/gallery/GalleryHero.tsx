@@ -11,7 +11,7 @@ export default function GalleryHero() {
     <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 md:pt-44 md:pb-28 bg-white overflow-hidden border-b border-border w-full">
       {/* Full-bleed background image */}
       <Image
-        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1600&q=80"
+        src="/images/treatments/gallery-hero.webp"
         alt="Revive Patient Transformations"
         fill
         priority

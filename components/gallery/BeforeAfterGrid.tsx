@@ -22,32 +22,32 @@ export default function BeforeAfterGrid() {
   const comparisons = [
     {
       title: "Er:YAG Laser Acne Scar Treatment",
-      beforeImage: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80",
-      afterImage: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
+      beforeImage: "/images/treatments/acne_b.webp",
+      afterImage: "/images/treatments/acne_a.webp",
       beforeLabel: "Before (Deep Pitted Scars)",
       afterLabel: "After (4 Sessions)",
       description: "Er:YAG fractional laser resurfacing stimulates new skin collagen, flattening pitted acne scars and smoothing texture."
     },
     {
       title: "Laser Photofacial for Melasma",
-      beforeImage: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80",
-      afterImage: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80",
+      beforeImage: "/images/treatments/laser_Photofacial_b.webp",
+      afterImage: "/images/treatments/laser_Photofacial_a.webp",
       beforeLabel: "Before (Uneven Pigmentation)",
       afterLabel: "After (6 Sessions)",
       description: "Q-switched Nd:YAG laser sessions target stubborn dermal pigments to achieve an even skin tone."
     },
     {
       title: "PRP Hair Restoration (Scalp)",
-      beforeImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
-      afterImage: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80",
+      beforeImage: "/images/treatments/prp_scalp_b.webp",
+      afterImage: "/images/treatments/prp_scalp_a.webp",
       beforeLabel: "Before (Visible Thinning)",
       afterLabel: "After (6 Sessions)",
       description: "Platelet-rich plasma growth factor injections trigger follicle activity, thickening hair shafts."
     },
     {
       title: "Aesthetic Chemical Peels for Glow",
-      beforeImage: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
-      afterImage: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80",
+      beforeImage: "/images/treatments/chemical_b.webp",
+      afterImage: "/images/treatments/chemical_a.webp",
       beforeLabel: "Before (Dull Texture)",
       afterLabel: "After (Series of Peels)",
       description: "Superficial glycolic peels exfoliate dry surface cells, revealing radiant, hydrated skin layers underneath."

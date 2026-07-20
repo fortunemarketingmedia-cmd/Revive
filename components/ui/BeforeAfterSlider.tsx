@@ -75,8 +75,26 @@ export default function BeforeAfterSlider({
       onMouseDown={() => setIsDragging(true)}
       onTouchStart={() => setIsDragging(true)}
     >
-      {/* Before Image (Background) */}
+      {/* After Image (Background) */}
       <div className="absolute inset-0 w-full h-full">
+        <Image
+          src={afterImage}
+          alt="After treatment"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover"
+          priority
+        />
+        <span className="absolute bottom-4 right-4 bg-primary/80 text-white font-inter text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded backdrop-blur-sm">
+          {afterLabel}
+        </span>
+      </div>
+
+      {/* Before Image (Foreground layered on top, width controlled by sliderPosition) */}
+      <div
+        className="absolute inset-0 w-full h-full overflow-hidden"
+        style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
+      >
         <Image
           src={beforeImage}
           alt="Before treatment"
@@ -87,23 +105,6 @@ export default function BeforeAfterSlider({
         />
         <span className="absolute bottom-4 left-4 bg-dark/70 text-white font-inter text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded backdrop-blur-sm">
           {beforeLabel}
-        </span>
-      </div>
-
-      {/* After Image (Foreground layered on top, width controlled by sliderPosition) */}
-      <div
-        className="absolute inset-0 w-full h-full overflow-hidden"
-        style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
-      >
-        <Image
-          src={afterImage}
-          alt="After treatment"
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover"
-        />
-        <span className="absolute bottom-4 right-4 bg-primary/80 text-white font-inter text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded backdrop-blur-sm">
-          {afterLabel}
         </span>
       </div>
 

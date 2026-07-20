@@ -7,15 +7,15 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const slideshowPhotos = [
   {
-    url: "/images/about-hero-clinical.webp",
+    url: "/images/gallery/room.webp",
     label: "Main Consultation & Advisory Suite",
   },
   {
-    url: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80",
+    url: "/images/gallery/dermatology-room.webp",
     label: "Advanced Medical Dermatology Clinic Room",
   },
   {
-    url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80",
+    url: "/images/gallery/clinic.webp",
     label: "Clinical Reception & Lobby Area",
   },
   {

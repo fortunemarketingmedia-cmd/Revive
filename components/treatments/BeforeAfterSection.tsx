@@ -19,8 +19,8 @@ export default function BeforeAfterSection() {
               Acne Scar Laser Treatment
             </h3>
             <BeforeAfterSlider
-              beforeImage="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80"
-              afterImage="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80"
+              beforeImage="/images/treatments/acne_b.webp"
+              afterImage="/images/treatments/acne_a.webp"
               beforeLabel="Before (Deep Scars)"
               afterLabel="After (4 Sessions)"
             />
@@ -35,8 +35,8 @@ export default function BeforeAfterSection() {
               Laser Photofacial (Pigmentation)
             </h3>
             <BeforeAfterSlider
-              beforeImage="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80"
-              afterImage="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80"
+              beforeImage="/images/treatments/laser_Photofacial_b.webp"
+              afterImage="/images/treatments/laser_Photofacial_a.webp"
               beforeLabel="Before (Melasma & spots)"
               afterLabel="After (6 Sessions)"
             />
