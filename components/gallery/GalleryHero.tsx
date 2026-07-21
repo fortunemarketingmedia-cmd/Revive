@@ -11,7 +11,7 @@ export default function GalleryHero() {
     <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 md:pt-44 md:pb-28 bg-white overflow-hidden border-b border-border w-full">
       {/* Full-bleed background image */}
       <Image
-        src="/images/treatments/gallery-hero.webp"
+        src="/images/gallery/gallery-hero.webp"
         alt="Revive Patient Transformations"
         fill
         priority
@@ -22,7 +22,7 @@ export default function GalleryHero() {
       {/* Left-to-right blending mask overlay limited to 40% width */}
       <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 via-[25%] to-white/0 to-[40%] z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-20 flex flex-col items-start text-left">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 w-full relative z-20 flex flex-col items-start text-left">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

@@ -28,7 +28,7 @@ export default function SocialImpact() {
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 rounded-full bg-secondary/5 -z-10 filter blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 relative z-10">
         <AnimatedSectionTitle
           title="Social Responsibility & Awareness"
           subtitle="Giving Back to Nashik"
@@ -36,7 +36,7 @@ export default function SocialImpact() {
           className="mb-16"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1440px] mx-auto">
           {initiatives.map((item, idx) => {
             const Icon = item.icon;
             return (

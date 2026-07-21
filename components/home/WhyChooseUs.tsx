@@ -34,14 +34,14 @@ export default function WhyChooseUs() {
       {/* Decorative background grid elements */}
       <div className="absolute inset-0 bg-[radial-gradient(#7c131f02_1px,transparent_1px)] [background-size:32px_32px] opacity-80" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 relative z-10">
         <AnimatedSectionTitle
           title="Expert Care with Premium Personalized Beauty"
           subtitle="Why Choose Revive"
         />
 
         {/* Responsive Layout wrapper */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-8 max-w-6xl mx-auto mt-12">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-8 max-w-[1440px] mx-auto mt-12">
           
           {/* Left Column (Desktop only, Cards 1 & 3) */}
           <div className="hidden lg:flex flex-col justify-center gap-16 w-1/3 items-end text-right">

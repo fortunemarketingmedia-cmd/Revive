@@ -40,13 +40,13 @@ const teamRoles = [
 export default function ClinicTeam() {
   return (
     <section className="py-16 md:py-24 bg-background relative z-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 relative z-10">
         <AnimatedSectionTitle
           title="Clinical Support Team"
           subtitle="Trained Specialists & Care Coordinators"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-[1440px] mx-auto mt-12">
           {teamRoles.map((role, idx) => (
             <motion.div
               key={idx}

@@ -14,7 +14,7 @@ export default function CTABanner() {
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(#7c131f01_1px,transparent_1px)] [background-size:24px_24px] opacity-75" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
           
           {/* Left Column: Skincare Products Image (Tilted Leaf-Parallelogram Border) */}

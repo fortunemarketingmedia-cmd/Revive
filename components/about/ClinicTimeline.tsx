@@ -29,7 +29,7 @@ export default function ClinicTimeline() {
   ];
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden text-white min-h-[600px] flex items-center">
+    <section className="py-24 md:py-32 relative overflow-hidden text-white min-h-[700px] flex items-center">
       {/* Background Image Wrapper (Section only) */}
       <div className="absolute inset-0 -z-20 w-full h-full">
         <Image
@@ -40,20 +40,21 @@ export default function ClinicTimeline() {
           sizes="100vw"
           className="object-cover"
         />
-        {/* Dark overlay with backdrop-blur */}
+        {/* Dark overlay reverted to not darken the whole image */}
         <div className="absolute inset-0 bg-black/75 backdrop-blur-[6px] -z-10" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
-        <AnimatedSectionTitle
-          title="The Standards of Revive Care"
-          subtitle="Our Clinical Philosophy"
-          align="center"
-          className="mb-16 text-white [&>h2]:text-white [&>span]:text-[#7C131F]"
-        />
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 w-full relative z-10">
+        <div className="flex flex-col items-center mb-16">
+          <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-5 py-2 mb-4 inline-block shadow-lg">
+            <span className="font-inter text-xs md:text-sm font-semibold tracking-widest text-white uppercase block">
+              Our Clinical Philosophy
+            </span>
+          </div>
+        </div>
 
         {/* 4 Interactive Frosted Glass Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1440px] mx-auto">
           {standards.map((std, idx) => (
             <motion.div
               key={idx}

@@ -22,7 +22,7 @@ export default function ContactHero() {
       {/* Left-to-right blending mask overlay limited to 40% width */}
       <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 via-[25%] to-white/50 to-[25%] z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-20 flex flex-col items-start text-left">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 w-full relative z-20 flex flex-col items-start text-left">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

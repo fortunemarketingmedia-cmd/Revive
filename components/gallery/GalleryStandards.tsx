@@ -29,13 +29,13 @@ export default function GalleryStandards() {
       {/* Background glow blobs */}
       <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full bg-primary/5 filter blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 relative z-10">
         <AnimatedSectionTitle
           title="Behind the Results"
           subtitle="Our Clinical transparency Standards"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1440px] mx-auto mt-12">
           {standardsList.map((item, idx) => {
             const Icon = item.icon;
             return (

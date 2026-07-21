@@ -6,13 +6,13 @@ import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 export default function BeforeAfterSection() {
   return (
     <section className="py-20 md:py-28 bg-altbg relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 relative z-10">
         <AnimatedSectionTitle
           title="Clinical Results That Speak Volumes"
           subtitle="Before & After"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto">
           {/* Example 1: Skin resurfacing */}
           <div className="flex flex-col gap-4">
             <h3 className="font-playfair text-xl text-heading font-medium tracking-tight text-center">

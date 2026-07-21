@@ -43,7 +43,7 @@ export default function AnimatedSectionTitle({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="font-playfair text-3xl md:text-5xl lg:text-6xl text-heading font-medium tracking-tight max-w-4xl"
+        className="font-playfair text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl text-heading font-medium tracking-tight max-w-4xl"
       >
         {title}
       </motion.h2>

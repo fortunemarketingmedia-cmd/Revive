@@ -145,7 +145,7 @@ export default function HeroSection() {
       </div>
 
       {/* LAYER 8: Content & Typography Container */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 w-full grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
         
         {/* Right column container holding typography (Shifted right: starting at col 6) */}
         <div className="lg:col-span-7 lg:col-start-6 flex flex-col items-center lg:items-start text-center lg:text-left text-heading w-full">

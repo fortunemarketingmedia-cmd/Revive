@@ -13,7 +13,7 @@ export default function Footer() {
       {/* Decorative background blur blob */}
       <div className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-[#F06722]/5 filter blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16 relative z-10">
         {/* Col 1: Brand & Socials */}
         <div className="flex flex-col gap-6">
           <Link href="/" className="inline-block shrink-0">
@@ -145,7 +145,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-inter text-body/45 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-inter text-body/45 relative z-10">
         <p>© {new Date().getFullYear()} {clinicData.name}. All Rights Reserved.</p>
         <p className="tracking-wide">
           Designed with editorial luxury for <span className="text-[#7C131F] font-semibold">Revive</span>.

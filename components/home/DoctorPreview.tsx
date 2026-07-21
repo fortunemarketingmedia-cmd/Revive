@@ -10,7 +10,7 @@ import { doctorData } from "@/lib/content/clinic";
 export default function DoctorPreview() {
   return (
     <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-16 items-center">
           
           {/* Left Column: Doctor Image with parallax container */}

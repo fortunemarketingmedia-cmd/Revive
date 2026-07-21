@@ -8,13 +8,13 @@ import { clinicData } from "@/lib/content/clinic";
 export default function BranchCards() {
   return (
     <section id="branches" className="py-16 md:py-24 bg-background relative z-10 scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16">
         <AnimatedSectionTitle
           title="Visit Our Locations"
           subtitle="Clinic Branches"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-[1440px] mx-auto">
           {clinicData.branches.map((branch, idx) => {
             const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
               branch.name + " " + branch.address

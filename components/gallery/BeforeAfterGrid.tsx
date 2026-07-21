@@ -56,13 +56,13 @@ export default function BeforeAfterGrid() {
 
   return (
     <section className="py-16 md:py-24 bg-background relative z-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16">
         <AnimatedSectionTitle
           title="Clinical Case Comparisons"
           subtitle="Before & After Results"
         />
 
-        <div className="relative max-w-6xl mx-auto mt-12">
+        <div className="relative max-w-[1440px] mx-auto mt-12">
           {/* Navigation Buttons (Desktop only, positioned outside) */}
           <button 
             onClick={scrollPrev} 

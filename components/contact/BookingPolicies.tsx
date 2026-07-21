@@ -26,13 +26,13 @@ const policiesList = [
 export default function BookingPolicies() {
   return (
     <section className="py-16 md:py-24 bg-altbg/30 relative z-10 w-full border-t border-border/80">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 relative z-10">
         <AnimatedSectionTitle
           title="Important Guidelines"
           subtitle="Pre-appointment policies"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1440px] mx-auto mt-12">
           {policiesList.map((item, idx) => {
             const Icon = item.icon;
             return (

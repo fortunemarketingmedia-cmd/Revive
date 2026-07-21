@@ -16,13 +16,13 @@ export default function TreatmentCategories() {
       {/* Decorative background lines */}
       <div className="absolute inset-0 bg-[radial-gradient(#7c131f03_1px,transparent_1px)] [background-size:24px_24px] opacity-70" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 relative z-10">
         <AnimatedSectionTitle
           title="Clinical Solutions for Every Skin & Hair Need"
           subtitle="Treatment Categories"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-7xl mx-auto">
           {treatmentCategories.map((category, idx) => {
             return (
               <motion.div

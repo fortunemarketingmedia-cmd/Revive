@@ -23,14 +23,14 @@ export default function Testimonials() {
 
   return (
     <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 relative z-10">
         <AnimatedSectionTitle
           title="Patient Stories of Transformation"
           subtitle="Testimonials"
         />
 
         {/* Slider viewport */}
-        <div className="relative max-w-5xl mx-auto px-4">
+        <div className="relative max-w-7xl mx-auto px-4">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex -ml-6">
               {testimonials.map((testimonial) => (

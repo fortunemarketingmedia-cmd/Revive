@@ -32,13 +32,13 @@ export default function ConsultationExpectations() {
       {/* Decorative background glow blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-secondary/5 filter blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 relative z-10">
         <AnimatedSectionTitle
           title="Your First Visit"
           subtitle="What to expect during consultation"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-[1440px] mx-auto mt-12">
           {stepsList.map((item, idx) => {
             const Icon = item.icon;
             return (

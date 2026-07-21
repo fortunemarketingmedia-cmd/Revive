@@ -19,19 +19,19 @@ const slideshowPhotos = [
     label: "Clinical Reception & Lobby Area",
   },
   {
-    url: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80",
+    url: "/images/gallery/diagnos.webp",
     label: "Private Diagnosis Room",
   },
   {
-    url: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1200&q=80",
+    url: "/images/gallery/usfda.webp",
     label: "USFDA Laser Technology Setup Room",
   },
   {
-    url: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80",
+    url: "/images/gallery/machine.webp",
     label: "Sterilized Medical-Grade Equipment Desk",
   },
   {
-    url: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1200&q=80",
+    url: "/images/gallery/skinbarrier.webp",
     label: "Aesthetic Treatment & Skin-Barrier Therapy Room",
   },
 ];
