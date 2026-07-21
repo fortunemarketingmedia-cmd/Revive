@@ -11,7 +11,7 @@ export default function ContactHero() {
     <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 md:pt-44 md:pb-28 bg-white overflow-hidden border-b border-border w-full">
       {/* Full-bleed background image */}
       <Image
-        src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80"
+        src="/images/contact/contact-hero.webp"
         alt="Revive Clinic Lobby Reception"
         fill
         priority
