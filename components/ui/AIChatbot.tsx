@@ -200,7 +200,7 @@ export default function AIChatbot() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-primary text-white shadow-[0_8px_30px_rgba(124,19,31,0.3)] flex items-center justify-center border border-white/10 cursor-pointer focus:outline-none hover:scale-105 active:scale-95 transition-transform"
+            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 h-14 w-14 rounded-full bg-primary text-white shadow-[0_8px_30px_rgba(124,19,31,0.3)] flex items-center justify-center border border-white/10 cursor-pointer focus:outline-none hover:scale-105 active:scale-95 transition-transform"
             aria-label="Ask Revive AI Assistant"
           >
             {isOpen ? <FiX className="text-xl" /> : <FiCpu className="text-xl animate-pulse-slow" />}
@@ -215,7 +215,7 @@ export default function AIChatbot() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-24 right-6 z-50 w-[350px] sm:w-[380px] max-h-[500px] h-[80vh] bg-white rounded-3xl border border-border shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col font-inter"
+            className="fixed bottom-20 right-4 left-4 sm:left-auto sm:right-6 sm:w-[380px] z-50 max-h-[500px] h-[80vh] bg-white rounded-3xl border border-border shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col font-inter"
           >
             {/* Header section with custom AI icon badge */}
             <div className="bg-primary text-white px-6 py-4 flex justify-between items-center">
