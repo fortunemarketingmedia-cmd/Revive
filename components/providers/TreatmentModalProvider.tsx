@@ -99,7 +99,7 @@ export default function TreatmentModalProvider({ children }: { children: React.R
       <AnimatePresence>
         {/* 1. Category Treatments List Modal - Premium Grid Layout */}
         {activeCategory && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 overflow-hidden">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-hidden">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -115,24 +115,27 @@ export default function TreatmentModalProvider({ children }: { children: React.R
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 25 }}
               transition={{ type: "spring", stiffness: 380, damping: 32 }}
-              className="relative w-full max-w-7xl h-[85vh] md:h-[80vh] bg-background border border-border/80 rounded-[2.5rem] shadow-luxury flex flex-col overflow-hidden z-10"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="category-modal-title"
+              className="relative w-full max-w-7xl h-[calc(100dvh-1rem)] sm:h-[85vh] md:h-[80vh] bg-background border border-border/80 rounded-2xl sm:rounded-[2.5rem] shadow-luxury flex flex-col overflow-hidden z-10"
             >
               {/* Close Button */}
               <button
                 onClick={closeCategory}
-                className="absolute top-5 right-5 z-50 text-body hover:text-heading p-2 rounded-full bg-background border border-border shadow-sm hover:bg-altbg transition-colors"
+                className="absolute top-3 right-3 sm:top-5 sm:right-5 z-50 text-body hover:text-heading min-h-11 min-w-11 flex items-center justify-center rounded-full bg-background border border-border shadow-sm hover:bg-altbg transition-colors"
                 aria-label="Close"
               >
                 <FiX className="text-xl" />
               </button>
 
               {/* Title Header Section */}
-              <div className="p-8 md:p-10 border-b border-border/60 bg-altbg/30 relative overflow-hidden">
+              <div className="p-5 pr-16 sm:p-8 md:p-10 border-b border-border/60 bg-altbg/30 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-primary/5 filter blur-3xl pointer-events-none" />
                 <span className="font-playfair text-sm w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center font-bold text-primary shadow-sm mb-4">
                   {activeCategory.icon}
                 </span>
-                <h3 className="font-playfair text-3xl font-bold text-heading tracking-tight">
+                <h3 id="category-modal-title" className="font-playfair text-2xl sm:text-3xl font-bold text-heading tracking-tight">
                   {activeCategory.label}
                 </h3>
                 <p className="font-inter text-xs md:text-sm text-body/90 leading-relaxed mt-2 max-w-2xl">
@@ -142,7 +145,7 @@ export default function TreatmentModalProvider({ children }: { children: React.R
 
               {/* Scrollable Treatments Grid (2 columns on desktop) */}
               <div 
-                className="flex-1 overflow-y-auto p-8 md:p-10 space-y-6"
+                className="flex-1 overflow-y-auto overscroll-contain p-3 sm:p-8 md:p-10 space-y-4 sm:space-y-6"
                 data-lenis-prevent
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -153,10 +156,10 @@ export default function TreatmentModalProvider({ children }: { children: React.R
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: idx * 0.04 }}
                       onClick={() => openTreatment(t)}
-                      className="flex gap-4 p-5 rounded-2.5xl border border-border bg-background hover:border-primary/40 hover:shadow-luxury hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group items-center"
+                      className="flex gap-3 sm:gap-4 p-3 sm:p-5 rounded-2xl sm:rounded-2.5xl border border-border bg-background hover:border-primary/40 hover:shadow-luxury hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group items-center"
                     >
                       {/* Thumbnail frame */}
-                      <div className="relative w-20 h-20 rounded-2xl overflow-hidden shrink-0 bg-altbg border border-border shadow-sm">
+                      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl overflow-hidden shrink-0 bg-altbg border border-border shadow-sm">
                         <Image
                           src={t.image}
                           alt={t.name}
@@ -191,7 +194,7 @@ export default function TreatmentModalProvider({ children }: { children: React.R
 
         {/* 2. Treatment Details Modal - Large Luxury Editorial Layout */}
         {activeTreatment && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 overflow-hidden">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-hidden">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -207,19 +210,22 @@ export default function TreatmentModalProvider({ children }: { children: React.R
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 25 }}
               transition={{ type: "spring", stiffness: 380, damping: 32 }}
-              className="relative w-full max-w-[1600px] h-[92vh] md:h-[90vh] bg-background border border-border/80 rounded-[2.5rem] shadow-luxury flex flex-col md:flex-row overflow-hidden z-10"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="treatment-modal-title"
+              className="relative w-full max-w-[1600px] h-[calc(100dvh-1rem)] sm:h-[92vh] md:h-[90vh] bg-background border border-border/80 rounded-2xl sm:rounded-[2.5rem] shadow-luxury flex flex-col md:flex-row overflow-hidden z-10"
             >
               {/* Close Button */}
               <button
                 onClick={closeTreatment}
-                className="absolute top-5 right-5 z-50 text-body hover:text-heading p-2.5 rounded-full bg-background border border-border shadow-sm hover:bg-altbg transition-colors"
+                className="absolute top-3 right-3 sm:top-5 sm:right-5 z-50 text-body hover:text-heading min-h-11 min-w-11 flex items-center justify-center rounded-full bg-background border border-border shadow-sm hover:bg-altbg transition-colors"
                 aria-label="Close details"
               >
                 <FiX className="text-xl" />
               </button>
 
               {/* Left Side: Full-height Visual Cover (40% width) */}
-              <div className="relative w-full h-[260px] md:h-full md:w-[40%] shrink-0 overflow-hidden border-b md:border-b-0 md:border-r border-border/60 bg-altbg">
+              <div className="relative w-full h-[190px] sm:h-[260px] md:h-full md:w-[40%] shrink-0 overflow-hidden border-b md:border-b-0 md:border-r border-border/60 bg-altbg">
                 <Image
                   src={activeTreatment.image}
                   alt={activeTreatment.name}
@@ -247,7 +253,7 @@ export default function TreatmentModalProvider({ children }: { children: React.R
 
               {/* Right Side: Scrollable detailed information with data-lenis-prevent */}
               <div 
-                className="flex-1 overflow-y-auto p-8 md:p-12 space-y-10 flex flex-col"
+                className="flex-1 overflow-y-auto overscroll-contain p-5 sm:p-8 md:p-12 space-y-8 sm:space-y-10 flex flex-col"
                 data-lenis-prevent
               >
                 
@@ -256,7 +262,7 @@ export default function TreatmentModalProvider({ children }: { children: React.R
                   <span className="font-inter text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#B45309] bg-[#B45309]/5 border border-[#B45309]/10 px-4 py-2 rounded-full inline-block">
                     Clinical Program
                   </span>
-                  <h2 className="font-playfair text-3xl md:text-5xl text-heading font-medium tracking-tight leading-tight">
+                  <h2 id="treatment-modal-title" className="font-playfair text-2xl sm:text-3xl md:text-5xl text-heading font-medium tracking-tight leading-tight">
                     {activeTreatment.name}
                   </h2>
                   <p className="font-inter text-sm md:text-base text-body/90 leading-relaxed border-l-2 border-[#B45309]/30 pl-5 py-0.5">

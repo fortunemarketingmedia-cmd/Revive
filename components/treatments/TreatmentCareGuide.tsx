@@ -75,7 +75,7 @@ export default function TreatmentCareGuide() {
       {/* Decorative background glow blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-secondary/5 filter blur-3xl pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         <AnimatedSectionTitle
           title="Interactive Recovery Guidelines"
           subtitle="Pre & Post Treatment Care"
@@ -83,10 +83,10 @@ export default function TreatmentCareGuide() {
 
         {/* Tab Buttons Toggles - beautiful, modern, easy-to-use UX */}
         <div className="flex justify-center mt-12 mb-10">
-          <div className="flex items-center gap-2 p-1.5 bg-altbg/80 border border-border/40 rounded-full">
+          <div className="grid w-full max-w-xl grid-cols-2 gap-1.5 p-1.5 bg-altbg/80 border border-border/40 rounded-2xl sm:rounded-full">
             <button
               onClick={() => setActiveTab("pre")}
-              className={`font-inter text-xs md:text-sm font-semibold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 relative focus:outline-none flex items-center gap-2 ${
+              className={`font-inter text-[10px] sm:text-xs md:text-sm font-semibold uppercase tracking-normal sm:tracking-wider px-2 sm:px-6 py-3 rounded-xl sm:rounded-full transition-all duration-300 relative focus:outline-none flex items-center justify-center gap-1.5 sm:gap-2 ${
                 activeTab === "pre" ? "text-white" : "text-body hover:text-primary"
               }`}
             >
@@ -98,12 +98,12 @@ export default function TreatmentCareGuide() {
                 />
               )}
               <FiAlertCircle className="text-sm shrink-0" />
-              <span>Before Session (Pre-Care)</span>
+              <span>Before <span className="hidden sm:inline">Session (</span>Pre-Care<span className="hidden sm:inline">)</span></span>
             </button>
 
             <button
               onClick={() => setActiveTab("post")}
-              className={`font-inter text-xs md:text-sm font-semibold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 relative focus:outline-none flex items-center gap-2 ${
+              className={`font-inter text-[10px] sm:text-xs md:text-sm font-semibold uppercase tracking-normal sm:tracking-wider px-2 sm:px-6 py-3 rounded-xl sm:rounded-full transition-all duration-300 relative focus:outline-none flex items-center justify-center gap-1.5 sm:gap-2 ${
                 activeTab === "post" ? "text-white" : "text-body hover:text-primary"
               }`}
             >
@@ -115,13 +115,13 @@ export default function TreatmentCareGuide() {
                 />
               )}
               <FiCheckCircle className="text-sm shrink-0" />
-              <span>After Session (Post-Care)</span>
+              <span>After <span className="hidden sm:inline">Session (</span>Post-Care<span className="hidden sm:inline">)</span></span>
             </button>
           </div>
         </div>
 
         {/* Interactive Checklist Panel */}
-        <div className="bg-[#FAF8F5] rounded-[2.5rem] p-6 md:p-10 border border-[#EBE3D5] shadow-luxury relative overflow-hidden min-h-[420px]">
+        <div className="bg-[#FAF8F5] rounded-3xl sm:rounded-[2.5rem] p-4 sm:p-6 md:p-10 border border-[#EBE3D5] shadow-luxury relative overflow-hidden min-h-[420px]">
           {/* Subtle watermark badge */}
           <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-primary/5 flex items-center justify-center pointer-events-none">
             {activeTab === "pre" ? (
@@ -157,7 +157,7 @@ export default function TreatmentCareGuide() {
                       <div
                         key={item.id}
                         onClick={() => toggleCheck(item.id)}
-                        className={`flex items-start gap-4 p-5 rounded-2xl border transition-all duration-300 cursor-pointer ${
+                        className={`flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl border transition-all duration-300 cursor-pointer ${
                           isChecked
                             ? "bg-white/90 border-primary/45 shadow-sm opacity-70"
                             : "bg-white/40 border-[#EBE3D5] hover:border-primary/20 hover:bg-white/60"

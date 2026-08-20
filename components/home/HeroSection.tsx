@@ -130,7 +130,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#F8E7DF] pb-12 pt-20 select-none lg:pb-16 lg:pt-24">
+    <section className="mobile-viewport-height relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#F8E7DF] pb-12 pt-20 select-none lg:pb-16 lg:pt-24">
       {/* Clear looping background video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -178,7 +178,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero content */}
-      <div className="relative z-10 mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-10 px-4 sm:px-6 md:px-12 lg:grid-cols-12 lg:gap-12 2xl:px-16">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-4 px-4 pt-4 sm:gap-8 sm:px-6 md:px-12 lg:grid-cols-12 lg:gap-12 lg:pt-0 2xl:px-16">
         {/* Left intro video */}
         <motion.div
           initial={{
@@ -194,11 +194,11 @@ export default function HeroSection() {
             delay: 0.15,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="flex w-full items-center justify-center lg:col-span-5 lg:justify-start"
+          className="home-hero-media order-2 flex w-full items-center justify-center lg:order-1 lg:col-span-5 lg:justify-start"
         >
           {/* Feathered mask to seamlessly blend the video into the background video */}
           <div 
-            className="relative h-[500px] w-full max-w-[500px] overflow-hidden sm:h-[600px] lg:h-[650px]"
+            className="relative h-[310px] w-full max-w-[360px] overflow-hidden sm:h-[500px] sm:max-w-[500px] md:h-[600px] lg:h-[650px]"
             style={{
               maskImage: "radial-gradient(ellipse at center, black 70%, transparent 95%)",
               WebkitMaskImage: "radial-gradient(ellipse at center, black 70%, transparent 95%)"
@@ -225,7 +225,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Right-side text */}
-        <div className="flex w-full flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
+        <div className="home-hero-copy order-1 flex w-full flex-col items-center pt-5 text-center lg:order-2 lg:col-span-7 lg:items-start lg:pt-0 lg:text-left">
           <motion.h1
             initial={{
               opacity: 0,
@@ -240,7 +240,7 @@ export default function HeroSection() {
               ease: [0.25, 0.46, 0.45, 0.94],
               delay: 0.3,
             }}
-            className="mb-2 font-playfair text-4xl font-bold leading-[1.08] tracking-tight text-neutral-900 sm:text-5xl md:text-6xl lg:text-[86px]"
+            className="mb-1 font-playfair text-[clamp(2.15rem,10vw,3rem)] font-bold leading-[1.08] tracking-tight text-neutral-900 sm:mb-2 sm:text-5xl md:text-6xl lg:text-[86px]"
           >
             Making skin &amp;
             <br />
@@ -248,7 +248,7 @@ export default function HeroSection() {
           </motion.h1>
 
           {/* Rotating highlighted word */}
-          <div className="relative my-2 h-[56px] w-full overflow-hidden sm:h-[72px] md:h-[88px] lg:h-[115px]">
+          <div className="relative my-1 h-[50px] w-full overflow-hidden sm:my-2 sm:h-[72px] md:h-[88px] lg:h-[115px]">
             <AnimatePresence mode="wait">
               <motion.span
                 key={wordIndex}
@@ -268,7 +268,7 @@ export default function HeroSection() {
                   duration: 0.4,
                   ease: "easeOut",
                 }}
-                className="absolute left-1/2 top-0 -translate-x-1/2 whitespace-nowrap font-playfair text-4xl font-bold italic leading-none tracking-tight text-[#7C131F] sm:text-5xl md:text-6xl lg:left-0 lg:translate-x-0 lg:text-[86px]"
+                className="absolute inset-x-0 top-0 whitespace-nowrap text-center font-playfair text-[clamp(2.15rem,10vw,3rem)] font-bold italic leading-none tracking-tight text-[#7C131F] sm:text-5xl md:text-6xl lg:right-auto lg:text-left lg:text-[86px]"
               >
                 {words[wordIndex]}
               </motion.span>
@@ -289,7 +289,7 @@ export default function HeroSection() {
               duration: 0.8,
               delay: 0.7,
             }}
-            className="mb-10 mt-4 max-w-[500px] font-inter text-sm leading-[1.8] text-neutral-700 sm:text-base"
+            className="mb-6 mt-2 max-w-[500px] font-inter text-sm leading-[1.65] text-neutral-700 sm:mb-10 sm:mt-4 sm:text-base sm:leading-[1.8]"
           >
             Expert dermatological solutions and aesthetic care with
             board-certified clinical excellence. Led by Dr. Shraddha Sonanis.

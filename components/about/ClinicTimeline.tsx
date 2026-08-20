@@ -31,20 +31,19 @@ export default function ClinicTimeline() {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden text-white min-h-[700px] flex items-center">
       {/* Background Image Wrapper (Section only) */}
-      <div className="absolute inset-0 -z-20 w-full h-full">
+      <div className="absolute inset-0 z-0 w-full h-full">
         <Image
           src="/images/about/bgclinic.webp"
           alt="Revive Clinic Luxury Interior Backdrop"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover site-cover"
         />
-        {/* Dark overlay reverted to not darken the whole image */}
-        <div className="absolute inset-0 bg-black/75 backdrop-blur-[6px] -z-10" />
+        <div className="absolute inset-0 z-10 bg-black/70" />
       </div>
 
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 w-full relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 w-full relative z-20">
         <div className="flex flex-col items-center mb-16">
           <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-5 py-2 mb-4 inline-block shadow-lg">
             <span className="font-inter text-xs md:text-sm font-semibold tracking-widest text-white uppercase block">
@@ -68,7 +67,7 @@ export default function ClinicTimeline() {
               <span className="font-playfair text-2xl font-bold text-[#7C131F] italic mb-4 block">
                 {std.num}
               </span>
-              <h3 className="font-playfair text-xl font-medium tracking-tight text-white mb-3 group-hover:text-[#7C131F] transition-colors">
+              <h3 className="font-playfair text-xl font-medium tracking-tight text-white mb-3 group-hover:text-[#FDBD0E] transition-colors">
                 {std.title}
               </h3>
               <p className="font-inter text-xs sm:text-sm text-white/75 leading-relaxed">

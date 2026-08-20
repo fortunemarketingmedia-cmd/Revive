@@ -17,7 +17,7 @@ export default function BranchCards() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-[1440px] mx-auto">
           {clinicData.branches.map((branch, idx) => {
             const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-              branch.name + " " + branch.address
+              branch.plusCode
             )}`;
 
             return (
@@ -41,6 +41,7 @@ export default function BranchCards() {
                       <div>
                         <p className="leading-relaxed">{branch.address}</p>
                         <p className="text-xs text-body/50 mt-1">Landmark: {branch.landmark}</p>
+                        <p className="text-xs font-semibold text-primary mt-1">Plus Code: {branch.plusCode}</p>
                       </div>
                     </div>
 

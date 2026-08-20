@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import { Treatment } from "@/lib/content/treatments";
-import { useTreatmentModal } from "@/components/providers/TreatmentModalProvider";
 
 interface TreatmentCardProps {
   treatment: Treatment;
@@ -13,8 +12,6 @@ interface TreatmentCardProps {
 }
 
 export default function TreatmentCard({ treatment, index }: TreatmentCardProps) {
-  const { openTreatment } = useTreatmentModal();
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -22,7 +19,6 @@ export default function TreatmentCard({ treatment, index }: TreatmentCardProps) 
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       whileHover={{ y: -6, scale: 1.015 }}
-      onClick={() => openTreatment(treatment)}
       className="relative w-full min-h-[480px] lg:min-h-[510px] flex flex-col justify-end rounded-[2rem] border-2 border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.18)] overflow-hidden group bg-altbg cursor-pointer"
     >
       {/* Background Image (Covers full card background) */}
@@ -49,7 +45,7 @@ export default function TreatmentCard({ treatment, index }: TreatmentCardProps) 
         <span className="text-[#F06722] text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-1.5 block">
           {treatment.tagline}
         </span>
-        <h3 className="font-playfair text-xl md:text-2xl text-white font-medium tracking-tight mb-2 transition-colors group-hover:text-[#7C131F]">
+        <h3 className="font-playfair text-xl md:text-2xl text-white font-medium tracking-tight mb-2 transition-colors group-hover:text-[#FDBD0E]">
           {treatment.name}
         </h3>
         <p className="font-inter text-xs md:text-sm text-white/75 leading-relaxed mb-6 line-clamp-3">
@@ -58,14 +54,20 @@ export default function TreatmentCard({ treatment, index }: TreatmentCardProps) 
 
         {/* Action Button */}
         <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-          <span className="font-inter text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#7C131F] group-hover:text-white transition-colors">
+          <span className="font-inter text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#FDBD0E] group-hover:text-white transition-colors">
             Learn More
           </span>
-          <span className="w-8 h-8 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white group-hover:text-black group-hover:bg-[#7C131F] group-hover:border-[#7C131F] transition-all duration-300">
+          <span className="w-8 h-8 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white group-hover:text-[#7C131F] group-hover:bg-[#FDBD0E] group-hover:border-[#FDBD0E] transition-all duration-300">
             <FiArrowRight className="text-sm transition-transform duration-300 group-hover:translate-x-0.5" />
           </span>
         </div>
       </div>
+
+      <Link
+        href={`/treatments/${treatment.slug}`}
+        className="absolute inset-0 z-30 rounded-[2rem] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#FDBD0E] focus-visible:ring-inset"
+        aria-label={`Learn more about ${treatment.name}`}
+      />
     </motion.div>
   );
 }

@@ -19,7 +19,7 @@ export default function AboutPreview() {
               title="Where Clinical Science Meets Aesthetic Excellence"
               subtitle="The Revive Philosophy"
               align="left"
-              className="mb-8"
+              className="mb-6"
             />
             
             <motion.p
@@ -27,7 +27,7 @@ export default function AboutPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-inter text-base text-body leading-relaxed mb-6"
+              className="font-inter text-base md:text-lg text-body leading-relaxed mb-5 max-w-4xl"
             >
               Founded by Dr. Shraddha Sonanis, Revive Skin Clinics represents the pinnacle of dermatology in Nashik. We believe that healthy, radiant skin is built on clinical integrity and personalized care.
             </motion.p>
@@ -37,7 +37,7 @@ export default function AboutPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="font-inter text-base text-body leading-relaxed mb-10"
+              className="font-inter text-base md:text-lg text-body leading-relaxed mb-8 max-w-4xl"
             >
               With over 15 years of board-certified expertise spanning Seth GS Medical College, KEM Hospital Mumbai, and Kaya Skin Clinic, we combine advanced medical dermatology, state-of-the-art USFDA lasers, and non-surgical aesthetic enhancements under one luxurious roof.
             </motion.p>

@@ -12,16 +12,10 @@ const affiliations = [
     credential: "Life Member",
   },
   {
-    acronym: "CDSI",
-    name: "Cosmetic Dermatology Society of India",
-    description: "India's premier society for aesthetic dermatologists, focusing on laser safety guidelines, chemical peeling standards, and advanced anti-aging innovations.",
-    credential: "Registered Member",
-  },
-  {
-    acronym: "ACSI",
-    name: "Association of Cutaneous Surgeons of India",
-    description: "The leading national body promoting advanced dermatological surgery, dermato-surgical training, and standardized hair transplantation protocols.",
-    credential: "Active Member",
+    acronym: "IMA",
+    name: "Indian Medical Association",
+    description: "India's leading national organization representing medical professionals and promoting high standards in medical ethics, education, and patient care.",
+    credential: "Member",
   },
 ];
 
@@ -37,7 +31,7 @@ export default function ProfessionalAffiliations() {
           subtitle="Medical Credentials & Authority"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1440px] mx-auto mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1440px] mx-auto mt-12">
           {affiliations.map((aff, idx) => (
             <motion.div
               key={idx}

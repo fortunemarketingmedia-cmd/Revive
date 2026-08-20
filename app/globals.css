@@ -38,6 +38,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+/* Keep anchored content visible below the fixed navigation. */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
 /* Luxury Editorial Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-jakarta);
@@ -201,4 +231,136 @@ html {
     rgba(0, 0, 0, 0.7) 65%,
     transparent 100%
   );
+}
+
+/* Gold provides clearer feedback than burgundy on dark and tinted surfaces. */
+[class~="hover:bg-primary"]:hover,
+[class~="hover:bg-[#7C131F]"]:hover,
+.group:hover [class~="group-hover:bg-primary"],
+.group:hover [class~="group-hover:bg-[#7C131F]"] {
+  background-color: #FDBD0E !important;
+  border-color: #FDBD0E !important;
+  color: #7C131F !important;
+}
+
+[class~="hover:text-primary"]:hover,
+[class~="hover:text-[#7C131F]"]:hover,
+.group:hover [class~="group-hover:text-primary"],
+.group:hover [class~="group-hover:text-[#7C131F]"] {
+  color: #FDBD0E !important;
+}
+
+/* Burgundy remains the high-contrast hover color against the gold navigation. */
+.site-navbar [class~="hover:text-[#7C131F]"]:hover {
+  color: #7C131F !important;
+}
+
+/* Mobile browser chrome changes height while scrolling; dvh follows the usable viewport. */
+@supports (min-height: 100dvh) {
+  .min-h-screen,
+  .mobile-viewport-height {
+    min-height: 100dvh;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    min-width: 320px;
+  }
+
+  /* Prevent iOS from zooming the page when a form field receives focus. */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  .noise-bg,
+  .cursor-glow,
+  .glow-spot {
+    display: none;
+  }
+
+  .page-hero {
+    min-height: 100svh;
+    padding-top: 7rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .page-hero-copy {
+    max-width: 34rem;
+  }
+
+  .page-hero-copy br {
+    display: none;
+  }
+
+  .page-hero-overlay-light {
+    background: linear-gradient(to bottom, rgba(255,255,255,.88), rgba(255,255,255,.78) 58%, rgba(255,255,255,.9));
+  }
+}
+
+/* Compact short landscape screens instead of forcing a tall portrait composition. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 1023px) {
+  .page-hero {
+    min-height: 100dvh;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+
+  .page-hero-copy {
+    max-width: 42rem;
+  }
+
+  .page-hero-copy h1 {
+    font-size: clamp(2rem, 7vw, 3.25rem);
+    margin-bottom: .75rem;
+  }
+
+  .page-hero-copy p {
+    margin-bottom: 1rem;
+  }
+
+  .page-hero-copy > span {
+    margin-bottom: .75rem;
+  }
+
+  .home-hero-media {
+    display: none;
+  }
+
+  .home-hero-copy {
+    padding-top: 2rem;
+  }
+
+  .home-hero-copy h1 {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .home-hero-copy > div:nth-of-type(1) {
+    height: 3.25rem;
+  }
+
+  .home-hero-copy > p {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }

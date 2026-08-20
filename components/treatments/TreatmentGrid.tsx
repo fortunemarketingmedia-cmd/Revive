@@ -75,7 +75,7 @@ export default function TreatmentGrid() {
       : treatments.filter((t) => t.category === activeCategory);
 
   return (
-    <section className="py-16 md:py-24 bg-background relative z-10 w-full overflow-hidden">
+    <section id="treatments-list" className="py-16 md:py-24 bg-background relative z-10 w-full overflow-hidden scroll-mt-24">
       {/* Decorative background blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-secondary/5 filter blur-3xl pointer-events-none" />
 

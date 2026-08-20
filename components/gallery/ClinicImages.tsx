@@ -102,7 +102,7 @@ export default function ClinicImages() {
   };
 
   return (
-    <section className="relative w-full h-[550px] md:h-[650px] overflow-hidden flex flex-col justify-between py-16 md:py-20 text-white z-10 bg-black">
+    <section className="relative w-full h-[460px] sm:h-[550px] md:h-[650px] overflow-hidden flex flex-col justify-between py-10 sm:py-16 md:py-20 text-white z-10 bg-black">
       
       {/* Immersive Slideshow Background Images */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
@@ -131,7 +131,7 @@ export default function ClinicImages() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/75 z-10 pointer-events-none" />
 
       {/* 1. TOP HEADER OVERLAY AREA */}
-      <div className="relative z-20 text-center max-w-4xl mx-auto px-6">
+      <div className="relative z-20 text-center max-w-4xl mx-auto px-14 sm:px-6">
         <motion.span
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -160,7 +160,7 @@ export default function ClinicImages() {
       </div>
 
       {/* 2. BOTTOM INFO & DOTS AREA */}
-      <div className="relative z-20 text-center max-w-3xl mx-auto px-6">
+      <div className="relative z-20 text-center max-w-3xl mx-auto px-14 sm:px-6">
         {/* Large active description text */}
         <AnimatePresence mode="wait">
           <motion.h3
@@ -176,17 +176,17 @@ export default function ClinicImages() {
         </AnimatePresence>
 
         {/* Interactive Progress Indicator Dots (Pills) */}
-        <div className="flex justify-center items-center gap-3">
+        <div className="flex justify-center items-center gap-2 sm:gap-3">
           {slideshowPhotos.map((_, idx) => {
             const isActive = idx === currentIndex;
             return (
               <button
                 key={idx}
                 onClick={() => handleDotClick(idx)}
-                className={`h-2.5 rounded-full transition-all duration-500 ease-out focus:outline-none ${
+                className={`min-h-11 min-w-6 flex items-center justify-center rounded-full transition-all duration-500 ease-out focus:outline-none after:block after:h-2.5 after:rounded-full after:transition-all ${
                   isActive
-                    ? "w-8 bg-[#7C131F] shadow-sm"
-                    : "w-2.5 bg-white/30 hover:bg-white/60"
+                    ? "after:w-8 after:bg-[#7C131F] after:shadow-sm"
+                    : "after:w-2.5 after:bg-white/30 hover:after:bg-white/60"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -198,14 +198,14 @@ export default function ClinicImages() {
       {/* 3. EDGE MANUAL NAVIGATION ARROWS */}
       <button
         onClick={handlePrev}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-25 w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-white/10 flex items-center justify-center text-white text-2xl hover:bg-[#7C131F] hover:border-[#7C131F] hover:text-black transition-all duration-300 shadow-lg"
+        className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-25 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white text-xl sm:text-2xl hover:bg-[#7C131F] hover:border-[#7C131F] hover:text-black transition-all duration-300 shadow-lg"
         aria-label="Previous slide"
       >
         <FiChevronLeft />
       </button>
       <button
         onClick={handleNext}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-25 w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-white/10 flex items-center justify-center text-white text-2xl hover:bg-[#7C131F] hover:border-[#7C131F] hover:text-black transition-all duration-300 shadow-lg"
+        className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-25 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white text-xl sm:text-2xl hover:bg-[#7C131F] hover:border-[#7C131F] hover:text-black transition-all duration-300 shadow-lg"
         aria-label="Next slide"
       >
         <FiChevronRight />

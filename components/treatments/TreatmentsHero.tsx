@@ -8,7 +8,7 @@ import { FiArrowRight, FiCalendar } from "react-icons/fi";
 
 export default function TreatmentsHero() {
   return (
-    <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 md:pt-44 md:pb-28 bg-white overflow-hidden border-b border-border w-full">
+    <section className="page-hero relative min-h-[100vh] flex items-center pt-32 pb-20 md:pt-44 md:pb-28 bg-white overflow-hidden border-b border-border w-full">
       {/* Full-bleed background image */}
       <Image
         src="/images/treatments/treatment-hero.webp"
@@ -16,13 +16,13 @@ export default function TreatmentsHero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center z-0"
+        className="object-cover object-center site-cover z-0"
       /> 
 
       {/* Left-to-right blending mask overlay limited to 40% width */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 via-[25%] to-white/0 to-[40%] z-10 pointer-events-none" />
+      <div className="page-hero-overlay-light absolute inset-0 bg-gradient-to-r from-white via-white/85 via-[25%] to-white/0 to-[40%] z-10 pointer-events-none" />
 
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 w-full relative z-20 flex flex-col items-start text-left">
+      <div className="page-hero-copy max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16 w-full relative z-20 flex flex-col items-start text-left">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export default function TreatmentsHero() {
 
           <a
             href="#treatments-list"
-            className="flex items-center justify-center bg-transparent border border-black/20 text-black font-inter text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-black/5 transition-all duration-300"
+            className="flex w-full sm:w-auto items-center justify-center bg-white/55 sm:bg-transparent border border-black/20 text-black font-inter text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-black/5 transition-all duration-300"
           >
             <span>Browse Services</span>
           </a>

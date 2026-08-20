@@ -24,8 +24,24 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isMobileMenuOpen]);
+
   // The navbar is ALWAYS gold with rounded bottom corners and soft shadows
-  const headerBgClass = "bg-[#FDBD0E]/95 backdrop-blur-xl py-6 px-6 sm:px-12 shadow-[0_20px_50px_rgba(253,189,14,0.15)] border-none rounded-b-[2rem]";
+  const headerBgClass = "h-16 sm:h-20 bg-[#FDBD0E]/95 backdrop-blur-xl px-4 sm:px-8 lg:px-12 shadow-[0_20px_50px_rgba(253,189,14,0.15)] border-none rounded-b-2xl sm:rounded-b-[2rem] pt-[env(safe-area-inset-top)]";
 
   // Navigation text styles: always primary burgundy on gold
   const linkTextClass = "text-[#7C131F]/85 hover:text-[#7C131F]";
@@ -42,29 +58,29 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 flex items-center justify-between ${headerBgClass}`}
+        className={`site-navbar fixed top-0 left-0 w-full z-50 transition-all duration-500 flex items-center justify-between ${headerBgClass}`}
       >
         {/* Logo - Premium Vector Brand Logo */}
         <Link href="/" className="flex items-center group focus:outline-none shrink-0">
           <Image
             src="/images/REVIVE_LOGO.svg"
             alt="Revive Skin Hair Clinic & Laser Centre"
-            width={140}
-            height={44}
-            className="h-8 sm:h-9 w-auto object-contain transition-opacity group-hover:opacity-90"
+            width={190}
+            height={56}
+            className="h-9 sm:h-12 w-auto max-w-[160px] sm:max-w-none object-contain transition-opacity group-hover:opacity-90"
             priority
           />
         </Link>
 
         {/* Navigation Links with Hover Underline Animations */}
-        <nav className="hidden lg:flex items-center gap-10 font-inter">
+        <nav className="hidden lg:flex items-center gap-9 xl:gap-11 font-inter">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative py-1 text-xs font-semibold tracking-[0.18em] uppercase transition-colors duration-300 group ${linkTextClass}`}
+                className={`relative py-1 text-sm font-semibold tracking-[0.16em] uppercase transition-colors duration-300 group ${linkTextClass}`}
               >
                 {link.label}
                 {/* Sliding Underline Effect */}
@@ -82,7 +98,7 @@ export default function Navbar() {
         <div className="hidden lg:block shrink-0">
           <Link
             href="/contact?book=true"
-            className={`group relative inline-flex items-center justify-center gap-2 px-6 py-3 font-inter text-[10px] font-bold uppercase tracking-[0.2em] rounded-full transition-all duration-500 overflow-hidden hover:scale-105 active:scale-95 ${ctaButtonClass}`}
+            className={`group relative inline-flex items-center justify-center gap-2 px-6 py-3 font-inter text-xs font-bold uppercase tracking-[0.16em] rounded-full transition-all duration-500 overflow-hidden hover:scale-105 active:scale-95 ${ctaButtonClass}`}
           >
             {/* Light sweep hover animation */}
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
@@ -96,8 +112,10 @@ export default function Navbar() {
         {/* Mobile hamburger menu */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={hamburgerClass}
-          aria-label="Toggle Menu"
+          className={`${hamburgerClass} min-h-11 min-w-11 flex items-center justify-center`}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
           {isMobileMenuOpen ? <HiX /> : <HiMenuAlt3 />}
         </button>
@@ -111,9 +129,10 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#FDBD0E] flex flex-col justify-center items-center px-6 py-24 lg:hidden"
+            id="mobile-navigation"
+            className="site-navbar fixed inset-0 z-40 bg-[#FDBD0E] flex flex-col justify-start sm:justify-center items-center px-6 pt-24 pb-[max(2rem,env(safe-area-inset-bottom))] overflow-y-auto lg:hidden"
           >
-            <div className="flex flex-col items-center gap-8">
+            <div className="flex min-h-full sm:min-h-0 flex-col items-center justify-center gap-5 sm:gap-8 py-4">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -121,7 +140,7 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`font-inter text-sm font-bold uppercase tracking-[0.2em] transition-colors ${
+                    className={`min-h-11 flex items-center font-inter text-sm font-bold uppercase tracking-[0.2em] transition-colors ${
                       isActive ? "text-[#7C131F] font-extrabold" : "text-[#7C131F]/70 hover:text-[#7C131F]"
                     }`}
                   >

@@ -19,7 +19,7 @@ export default function AnimatedSectionTitle({
   return (
     <div
       className={cn(
-        "flex flex-col mb-16 md:mb-20",
+        "flex flex-col mb-10 md:mb-12",
         align === "center" && "items-center text-center",
         align === "left" && "items-start text-left",
         align === "right" && "items-end text-right",
@@ -32,7 +32,7 @@ export default function AnimatedSectionTitle({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="font-inter text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-3 block"
+          className="font-inter text-xl md:text-2xl lg:text-3xl font-bold tracking-[0.12em] text-primary uppercase mb-4 block"
         >
           {subtitle}
         </motion.span>
@@ -43,13 +43,13 @@ export default function AnimatedSectionTitle({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="font-playfair text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl text-heading font-medium tracking-tight max-w-4xl"
+        className="font-playfair text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl text-heading font-medium leading-[1.1] tracking-tight max-w-4xl"
       >
         {title}
       </motion.h2>
 
       {/* Thin luxury editorial lines */}
-      <div className="w-full flex items-center justify-center mt-6">
+      <div className="w-full flex items-center justify-center mt-4">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "80px" }}

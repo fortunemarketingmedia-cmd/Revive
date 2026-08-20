@@ -24,11 +24,11 @@ export const clinicData = {
       state: "Maharashtra",
       pincode: "422002",
       landmark: "Next to Insure Eye Institute",
+      plusCode: "XQXC+XR Nashik, Maharashtra",
       phone: "0253-231-0890",
       mobile: "+91-98230-63063",
       timings: "Mon – Sat: 10:00 AM – 2:00 PM & 5:00 PM – 8:00 PM",
-      mapUrl:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.5!2d73.7898!3d20.0111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDAwJzQwLjAiTiA3M8KwNDcnMjMuMyJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin",
+      mapUrl: "https://www.google.com/maps?q=XQXC%2BXR%20Nashik%2C%20Maharashtra&output=embed",
     },
     {
       id: 2,
@@ -39,11 +39,11 @@ export const clinicData = {
       state: "Maharashtra",
       pincode: "422101",
       landmark: "Near Muktidham Temple",
+      plusCode: "XR3P+47 Nashik, Maharashtra",
       phone: "0253-231-0890",
       mobile: "+91-98230-63063",
       timings: "Mon – Sat: 10:00 AM – 2:00 PM & 5:00 PM – 8:00 PM",
-      mapUrl:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.5!2d73.8400!3d19.9800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDU4JzQ4LjAiTiA3M8KwNTAnMjQuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin",
+      mapUrl: "https://www.google.com/maps?q=XR3P%2B47%20Nashik%2C%20Maharashtra&output=embed",
     },
   ],
   stats: [

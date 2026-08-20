@@ -47,12 +47,12 @@ export default function BookingPopup() {
   const handleAction = () => {
     setIsOpen(false);
     if (pathname === "/contact") {
-      const element = document.getElementById("booking-portal");
+      const element = document.getElementById("booking-form");
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      router.push("/contact#booking-portal");
+      router.push("/contact#booking-form");
     }
   };
 
@@ -64,7 +64,10 @@ export default function BookingPopup() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.95 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
-          className="fixed bottom-6 right-6 md:right-8 z-50 w-[calc(100%-2rem)] sm:w-[420px] min-h-[480px] bg-background/95 backdrop-blur-md border border-border shadow-luxury rounded-[2.5rem] p-8 flex flex-col justify-between text-left pointer-events-auto"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="booking-popup-title"
+          className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-4 right-4 sm:left-auto sm:bottom-6 sm:right-6 md:right-8 z-50 w-auto sm:w-[420px] max-h-[calc(100dvh-2rem)] min-h-0 sm:min-h-[480px] overflow-y-auto bg-background/95 backdrop-blur-md border border-border shadow-luxury rounded-3xl sm:rounded-[2.5rem] p-5 sm:p-8 flex flex-col justify-between gap-6 text-left pointer-events-auto"
         >
           {/* Top Section */}
           <div className="space-y-4">
@@ -73,13 +76,13 @@ export default function BookingPopup() {
                 <span className="font-inter text-xs font-bold uppercase tracking-widest text-[#7C131F]">
                   Clinical Consultation
                 </span>
-                <h3 className="font-playfair text-2xl font-bold text-heading mt-1.5 leading-snug">
+                <h3 id="booking-popup-title" className="font-playfair text-xl sm:text-2xl font-bold text-heading mt-1.5 leading-snug">
                   Ready for Transformation?
                 </h3>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-body hover:text-heading p-1.5 rounded-full hover:bg-altbg transition-colors shrink-0"
+                className="text-body hover:text-heading min-h-11 min-w-11 flex items-center justify-center rounded-full hover:bg-altbg transition-colors shrink-0"
                 aria-label="Close dialog"
               >
                 <FiX className="text-xl" />
