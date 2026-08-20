@@ -64,7 +64,7 @@ export default function ClinicTimeline() {
               whileHover={{ y: -6, scale: 1.01 }}
               className="bg-white/10 backdrop-blur-[12px] border border-white/20 rounded-[2rem] p-8 shadow-[0_15px_35px_rgba(0,0,0,0.25)] flex flex-col justify-start hover:bg-white/15 hover:border-white/35 transition-all duration-300 group"
             >
-              <span className="font-playfair text-2xl font-bold text-[#7C131F] italic mb-4 block">
+              <span className="font-playfair text-2xl font-bold text-[#FDBD0E] italic mb-4 block">
                 {std.num}
               </span>
               <h3 className="font-playfair text-xl font-medium tracking-tight text-white mb-3 group-hover:text-[#FDBD0E] transition-colors">
