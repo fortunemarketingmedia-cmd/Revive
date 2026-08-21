@@ -1,59 +1,90 @@
-"use client";
-
 import AnimatedSectionTitle from "@/components/ui/AnimatedSectionTitle";
-import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
-import useEmblaCarousel from "embla-carousel-react";
-import { useCallback } from "react";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import Image from "next/image";
+
+const comparisons = [
+  {
+    title: "PRP Hair Restoration (Scalp)",
+    beforeImage: "/images/treatments/prp_scalp_b.webp",
+    afterImage: "/images/treatments/prp_scalp_a.webp",
+    beforeLabel: "Before (Visible Thinning)",
+    afterLabel: "After (6 Sessions)",
+    description: "Platelet-rich plasma growth factor injections trigger follicle activity, thickening hair shafts.",
+  },
+  {
+    title: "MNRF Treatment",
+    beforeImage: "/images/gallery/before-after/mnrf-before.webp",
+    afterImage: "/images/gallery/before-after/mnrf-after.webp",
+    beforeLabel: "Before MNRF",
+    afterLabel: "After MNRF",
+    description: "A clinical comparison showing the visible result following microneedling radiofrequency treatment.",
+  },
+  {
+    title: "Xanthelasma Treatment",
+    beforeImage: "/images/gallery/before-after/xanthelasma-before.webp",
+    afterImage: "/images/gallery/before-after/xanthelasma-after.webp",
+    beforeLabel: "Before Treatment",
+    afterLabel: "After Treatment",
+    description: "A before-and-after comparison showing the treated eye area following xanthelasma removal.",
+  },
+  {
+    title: "Radiofrequency Treatment",
+    beforeImage: "/images/gallery/before-after/rf-before.webp",
+    afterImage: "/images/gallery/before-after/rf-after.webp",
+    beforeLabel: "Before RF",
+    afterLabel: "After RF",
+    description: "A clinical comparison showing the visible result following radiofrequency treatment.",
+  },
+  {
+    title: "Blepharoplasty",
+    beforeImage: "/images/gallery/before-after/blepharoplasty-before.webp",
+    afterImage: "/images/gallery/before-after/blepharoplasty-after.webp",
+    beforeLabel: "Before Procedure",
+    afterLabel: "After Procedure",
+    description: "A before-and-after comparison of the eye area following blepharoplasty.",
+  },
+  {
+    title: "Laser Hair Reduction",
+    beforeImage: "/images/gallery/before-after/lhr-before.webp",
+    afterImage: "/images/gallery/before-after/lhr-after.webp",
+    beforeLabel: "Before LHR",
+    afterLabel: "After LHR",
+    description: "A before-and-after comparison showing reduced hair growth following laser hair reduction.",
+  },
+  {
+    title: "HIFU Treatment",
+    beforeImage: "/images/gallery/before-after/hifu-before.webp",
+    afterImage: "/images/gallery/before-after/hifu-after.webp",
+    beforeLabel: "Before HIFU",
+    afterLabel: "After HIFU",
+    description: "A clinical comparison showing the visible lifting and contouring result following HIFU treatment.",
+  },
+  {
+    title: "Botox Treatment",
+    beforeImage: "/images/gallery/before-after/botox-before.webp",
+    afterImage: "/images/gallery/before-after/botox-after.webp",
+    beforeLabel: "Before Botox",
+    afterLabel: "After Botox",
+    description: "A before-and-after comparison showing the visible result following Botox treatment.",
+  },
+  {
+    title: "Dermal Filler Treatment",
+    beforeImage: "/images/gallery/before-after/filler-before.webp",
+    afterImage: "/images/gallery/before-after/filler-after.webp",
+    beforeLabel: "Before Filler",
+    afterLabel: "After Filler",
+    description: "A clinical comparison showing the visible result following dermal filler treatment.",
+  },
+  {
+    title: "Microblading",
+    beforeImage: "/images/gallery/before-after/microblading-before.webp",
+    afterImage: "/images/gallery/before-after/microblading-after.webp",
+    beforeLabel: "Before Microblading",
+    afterLabel: "After Microblading",
+    description: "A before-and-after comparison showing enhanced eyebrow shape and definition following microblading.",
+  },
+];
 
 export default function BeforeAfterGrid() {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "start", skipSnaps: false, watchDrag: false }
-  );
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const comparisons = [
-    {
-      title: "Er:YAG Laser Acne Scar Treatment",
-      beforeImage: "/images/treatments/acne_b.webp",
-      afterImage: "/images/treatments/acne_a.webp",
-      beforeLabel: "Before (Deep Pitted Scars)",
-      afterLabel: "After (4 Sessions)",
-      description: "Er:YAG fractional laser resurfacing stimulates new skin collagen, flattening pitted acne scars and smoothing texture."
-    },
-    {
-      title: "Laser Photofacial for Melasma",
-      beforeImage: "/images/treatments/laser_Photofacial_b.webp",
-      afterImage: "/images/treatments/laser_Photofacial_a.webp",
-      beforeLabel: "Before (Uneven Pigmentation)",
-      afterLabel: "After (6 Sessions)",
-      description: "Q-switched Nd:YAG laser sessions target stubborn dermal pigments to achieve an even skin tone."
-    },
-    {
-      title: "PRP Hair Restoration (Scalp)",
-      beforeImage: "/images/treatments/prp_scalp_b.webp",
-      afterImage: "/images/treatments/prp_scalp_a.webp",
-      beforeLabel: "Before (Visible Thinning)",
-      afterLabel: "After (6 Sessions)",
-      description: "Platelet-rich plasma growth factor injections trigger follicle activity, thickening hair shafts."
-    },
-    {
-      title: "Aesthetic Chemical Peels for Glow",
-      beforeImage: "/images/treatments/chemical_b.webp",
-      afterImage: "/images/treatments/chemical_a.webp",
-      beforeLabel: "Before (Dull Texture)",
-      afterLabel: "After (Series of Peels)",
-      description: "Superficial glycolic peels exfoliate dry surface cells, revealing radiant, hydrated skin layers underneath."
-    }
-  ];
-
   return (
     <section id="before-after-gallery" className="py-16 md:py-24 bg-background relative z-10 scroll-mt-24">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16">
@@ -62,50 +93,46 @@ export default function BeforeAfterGrid() {
           subtitle="Before & After Results"
         />
 
-        <div className="relative max-w-[1440px] mx-auto mt-12">
-          {/* Navigation Buttons (Desktop only, positioned outside) */}
-          <button 
-            onClick={scrollPrev} 
-            className="absolute -left-4 md:-left-12 top-[40%] -translate-y-1/2 w-12 h-12 hidden md:flex items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] text-[#7C131F] hover:bg-[#7C131F] hover:text-white transition-all z-20"
-            aria-label="Previous slide"
-          >
-            <FiChevronLeft className="text-2xl" />
-          </button>
-          
-          <button 
-            onClick={scrollNext} 
-            className="absolute -right-4 md:-right-12 top-[40%] -translate-y-1/2 w-12 h-12 hidden md:flex items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] text-[#7C131F] hover:bg-[#7C131F] hover:text-white transition-all z-20"
-            aria-label="Next slide"
-          >
-            <FiChevronRight className="text-2xl" />
-          </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-[1440px] mx-auto mt-12">
+          {comparisons.map((item, index) => (
+            <article
+              key={item.title}
+              className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm"
+            >
+              <div className="grid grid-cols-2 gap-px bg-border">
+                {[
+                  { image: item.beforeImage, label: item.beforeLabel, stage: "Before" },
+                  { image: item.afterImage, label: item.afterLabel, stage: "After" },
+                ].map((photo) => (
+                  <figure
+                    key={photo.stage}
+                    className="relative aspect-square overflow-hidden bg-[#f7f4f1]"
+                  >
+                    <Image
+                      src={photo.image}
+                      alt={`${photo.stage} ${item.title}`}
+                      fill
+                      sizes="(max-width: 767px) 50vw, 25vw"
+                      className="object-contain"
+                      priority={index < 2}
+                    />
+                    <figcaption className="absolute inset-x-2 bottom-2 rounded-md bg-[#681621]/85 px-2 py-1.5 text-center font-inter text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm sm:inset-x-auto sm:left-3 sm:bottom-3 sm:px-3 sm:text-xs">
+                      {photo.label}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
 
-          {/* Carousel Viewport */}
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex -ml-6">
-              {comparisons.map((item, index) => (
-                <div key={index} className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] pl-6 pb-6">
-                  <div className="flex flex-col gap-4 h-full">
-                    <h3 className="font-playfair text-xl text-heading font-medium tracking-tight h-14 flex items-end pb-2">
-                      {item.title}
-                    </h3>
-                    <div className="rounded-2xl overflow-hidden shadow-sm">
-                      <BeforeAfterSlider
-                        beforeImage={item.beforeImage}
-                        afterImage={item.afterImage}
-                        beforeLabel={item.beforeLabel}
-                        afterLabel={item.afterLabel}
-                      />
-                    </div>
-                    <p className="font-inter text-xs md:text-sm text-body/70 leading-relaxed mt-2 h-16">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
+              <div className="p-5 md:p-6">
+                <h3 className="font-playfair text-xl text-heading font-medium tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="font-inter text-xs md:text-sm text-body/70 leading-relaxed mt-2">
+                  {item.description}
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
