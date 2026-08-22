@@ -13,37 +13,29 @@ const words = [
   "excellence.",
 ];
 
+const seededRandom = (seed: number) =>
+  ((seed * 9301 + 49297) % 233280) / 233280;
+
 const particlesData = Array.from({ length: 25 }).map((_, index) => ({
   id: index,
-  size: [2, 4, 6][Math.floor(Math.random() * 3)],
-  x: Math.random() * 100,
-  y: Math.random() * 100,
-  duration: 12 + Math.random() * 18,
-  delay: Math.random() * -15,
+  size: [2, 4, 6][Math.floor(seededRandom(index * 4 + 1) * 3)],
+  x: seededRandom(index * 4 + 2) * 100,
+  y: seededRandom(index * 4 + 3) * 100,
+  duration: 12 + seededRandom(index * 4 + 4) * 18,
+  delay: seededRandom(index * 4 + 5) * -15,
 }));
 
 const INTRO_CHANNEL_NAME = "revive-intro-video";
 
 export default function HeroSection() {
-  const [mounted, setMounted] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
 
   const introVideoRef = useRef<HTMLVideoElement>(null);
 
   /*
-   * Wait until the component has mounted.
-   * This also prevents hydration issues caused by random particles.
-   */
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  /*
    * Change the highlighted word every 3.2 seconds.
    */
   useEffect(() => {
-    if (!mounted) return;
-
     const interval = window.setInterval(() => {
       setWordIndex((previousIndex) => {
         return (previousIndex + 1) % words.length;
@@ -53,15 +45,13 @@ export default function HeroSection() {
     return () => {
       window.clearInterval(interval);
     };
-  }, [mounted]);
+  }, []);
 
   /*
    * Intro video playback behavior.
    * Plays every time the page is loaded/refreshed.
    */
   useEffect(() => {
-    if (!mounted) return;
-
     const video = introVideoRef.current;
 
     if (!video) return;
@@ -123,11 +113,7 @@ export default function HeroSection() {
 
       introChannel?.close();
     };
-  }, [mounted]);
-
-  if (!mounted) {
-    return null;
-  }
+  }, []);
 
   return (
     <section className="mobile-viewport-height relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#F8E7DF] pb-12 pt-20 select-none lg:pb-16 lg:pt-24">
@@ -145,7 +131,7 @@ export default function HeroSection() {
           className="absolute inset-x-0 top-0 w-full object-cover"
           style={{ height: "106%" }}
         >
-          <source src="/videos/revive-hero.webm" type="video/webm" />
+          <source src="/videos/revive-hero.mp4" type="video/mp4" />
         </video>
         {/* Soft overlay gradient to blend colors and enhance readability */}
         <div className="absolute inset-0 bg-[#F8E7DF]/25  " />
@@ -208,7 +194,7 @@ export default function HeroSection() {
               ref={introVideoRef}
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
               controls={false}
               disablePictureInPicture
               poster="/images/intro-video-poster.webp"
@@ -219,7 +205,7 @@ export default function HeroSection() {
                 event.currentTarget.pause();
               }}
             >
-              <source src="/videos/revive-intro.webm" type="video/webm" />
+              <source src="/videos/revive-intro.mp4" type="video/mp4" />
             </video>
           </div>
         </motion.div>

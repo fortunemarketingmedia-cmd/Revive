@@ -83,7 +83,6 @@ export default function BeforeAfterSlider({
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          priority
         />
         <span className="absolute bottom-4 right-4 bg-primary/80 text-white font-inter text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded backdrop-blur-sm">
           {afterLabel}
@@ -101,7 +100,6 @@ export default function BeforeAfterSlider({
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          priority
         />
         <span className="absolute bottom-4 left-4 bg-dark/70 text-white font-inter text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded backdrop-blur-sm">
           {beforeLabel}

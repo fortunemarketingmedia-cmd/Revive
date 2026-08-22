@@ -30,7 +30,6 @@ export default function DoctorProfile() {
                 src="/images/about/DR3.webp"
                 alt="Dr. Shraddha Sonanis"
                 fill
-                priority
                 sizes="(max-width: 768px) 100vw, 420px"
                 className="object-cover transition-transform duration-700 hover:scale-103"
               />

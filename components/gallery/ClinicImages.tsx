@@ -114,7 +114,6 @@ export default function ClinicImages() {
               src={slideshowPhotos[currentIndex].url}
               alt={slideshowPhotos[currentIndex].label}
               fill
-              priority
               sizes="100vw"
               className="object-cover object-center"
             />

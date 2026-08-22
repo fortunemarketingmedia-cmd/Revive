@@ -114,7 +114,6 @@ export default function BeforeAfterGrid() {
                       fill
                       sizes="(max-width: 767px) 50vw, 25vw"
                       className="object-contain"
-                      priority={index < 2}
                     />
                     <figcaption className="absolute inset-x-2 bottom-2 rounded-md bg-[#681621]/85 px-2 py-1.5 text-center font-inter text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm sm:inset-x-auto sm:left-3 sm:bottom-3 sm:px-3 sm:text-xs">
                       {photo.label}

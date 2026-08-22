@@ -35,7 +35,6 @@ export default function ClinicTimeline() {
           src="/images/about/bgclinic.webp"
           alt="Revive Clinic Luxury Interior Backdrop"
           fill
-          priority
           sizes="100vw"
           className="object-cover site-cover"
         />

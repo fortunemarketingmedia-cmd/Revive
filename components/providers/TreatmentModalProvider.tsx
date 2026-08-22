@@ -230,7 +230,6 @@ export default function TreatmentModalProvider({ children }: { children: React.R
                   src={activeTreatment.image}
                   alt={activeTreatment.name}
                   fill
-                  priority
                   sizes="(max-width: 768px) 100vw, 500px"
                   className="object-cover object-center"
                 />

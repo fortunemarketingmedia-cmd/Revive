@@ -103,7 +103,6 @@ export default function WhyChooseUs() {
                 src="/images/home/oval.webp"
                 alt="Personalized aesthetic care at Revive"
                 fill
-                priority
                 sizes="310px"
                 className="object-cover"
               />
