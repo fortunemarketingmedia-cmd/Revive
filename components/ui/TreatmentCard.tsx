@@ -8,10 +8,9 @@ import { Treatment } from "@/lib/content/treatments";
 
 interface TreatmentCardProps {
   treatment: Treatment;
-  index: number;
 }
 
-export default function TreatmentCard({ treatment, index }: TreatmentCardProps) {
+export default function TreatmentCard({ treatment }: TreatmentCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

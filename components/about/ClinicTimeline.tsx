@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import AnimatedSectionTitle from "@/components/ui/AnimatedSectionTitle";
 
 export default function ClinicTimeline() {
   const standards = [

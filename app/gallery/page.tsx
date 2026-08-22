@@ -9,6 +9,7 @@ export const metadata = {
   title: "Gallery — Before & After Results — Revive Skin Clinic Nashik",
   description:
     "See real patient results and transformations after skin, hair, and laser treatments at Revive Skin Hair Clinic & Laser Centre, Nashik.",
+  alternates: { canonical: "/gallery" },
 };
 
 export default function GalleryPage() {

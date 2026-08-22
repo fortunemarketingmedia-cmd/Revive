@@ -27,6 +27,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.reviveskinclinics.in"),
   title: "Revive Skin Hair Clinic & Laser Centre — Dr. Shraddha Sonanis",
   description:
     "Nashik's premier skin, hair & laser clinic led by Dr. Shraddha Sonanis. Specialized in medical dermatology, USFDA diode laser hair reduction, anti-aging, PRP hair restoration.",
@@ -43,6 +44,17 @@ export const metadata: Metadata = {
     "Vitiligo Treatment Nashik",
   ],
   authors: [{ name: "Dr. Shraddha Sonanis" }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "Revive Skin Hair Clinic & Laser Centre",
     description: "Premium skin, hair & laser care in Nashik by expert Dermatologist Dr. Shraddha Sonanis.",
@@ -50,6 +62,11 @@ export const metadata: Metadata = {
     siteName: "Revive Skin Clinics",
     locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Revive Skin Hair Clinic & Laser Centre",
+    description: "Premium skin, hair & laser care in Nashik by Dr. Shraddha Sonanis.",
   },
 };
 

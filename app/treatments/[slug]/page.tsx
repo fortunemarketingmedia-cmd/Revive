@@ -25,6 +25,19 @@ export async function generateMetadata({ params }: TreatmentDetailPageProps) {
   return {
     title: `${treatment.name} — Revive Skin Clinic Nashik`,
     description: treatment.description,
+    alternates: { canonical: `/treatments/${treatment.slug}` },
+    openGraph: {
+      title: `${treatment.name} — Revive Skin Clinic Nashik`,
+      description: treatment.description,
+      type: "article",
+      images: [{ url: treatment.image, alt: treatment.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${treatment.name} — Revive Skin Clinic Nashik`,
+      description: treatment.description,
+      images: [treatment.image],
+    },
   };
 }
 

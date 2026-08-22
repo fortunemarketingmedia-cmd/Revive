@@ -66,24 +66,15 @@ export default function AppointmentForm() {
     setIsLoading(true);
 
     try {
-      // Form submission configured for easy CRM/Webhook integration later
-      const crmWebhookUrl = process.env.NEXT_PUBLIC_CRM_WEBHOOK_URL;
-      
-      if (crmWebhookUrl) {
-        const response = await fetch(crmWebhookUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
-        
-        if (!response.ok) {
-          throw new Error("Failed to send data to CRM");
-        }
-      } else {
-        // Fallback simulated network request
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("/api/appointments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const result = (await response.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(result?.error || "Unable to send appointment request");
       }
 
       setIsSuccess(true);
@@ -97,9 +88,8 @@ export default function AppointmentForm() {
         date: "",
         message: "",
       });
-    } catch (err) {
-      console.error(err);
-      setErrorMsg("An error occurred. Please try again or call the clinic directly.");
+    } catch {
+      setErrorMsg("We could not send your request. Please try again or call the clinic directly.");
     } finally {
       setIsLoading(false);
     }
@@ -136,6 +126,9 @@ export default function AppointmentForm() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
+                    minLength={2}
+                    maxLength={80}
+                    autoComplete="name"
                     placeholder="Enter your name"
                     className="font-inter text-sm border border-border/80 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors bg-altbg/10"
                   />
@@ -153,6 +146,11 @@ export default function AppointmentForm() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
+                    inputMode="tel"
+                    minLength={7}
+                    maxLength={20}
+                    pattern="[0-9+() -]{7,20}"
+                    autoComplete="tel"
                     placeholder="Enter phone number"
                     className="font-inter text-sm border border-border/80 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors bg-altbg/10"
                   />
@@ -169,6 +167,8 @@ export default function AppointmentForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
+                    maxLength={120}
+                    autoComplete="email"
                     placeholder="Enter email address"
                     className="font-inter text-sm border border-border/80 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors bg-altbg/10"
                   />
@@ -263,6 +263,7 @@ export default function AppointmentForm() {
                     id="message"
                     name="message"
                     rows={4}
+                    maxLength={1000}
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Enter any details or questions"

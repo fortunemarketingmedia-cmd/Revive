@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import TreatmentCard from "@/components/ui/TreatmentCard";
@@ -28,7 +28,7 @@ export default function TreatmentGrid() {
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
-  const onSelect = useCallback((api: any) => {
+  const onSelect = useCallback((api: NonNullable<typeof emblaApi>) => {
     setPrevBtnDisabled(!api.canScrollPrev());
     setNextBtnDisabled(!api.canScrollNext());
   }, []);
@@ -142,12 +142,12 @@ export default function TreatmentGrid() {
         {/* Carousel Viewport - full-width horizontal sliding with vertical padding to prevent hover clipping */}
         <div className="overflow-hidden w-full py-6 -my-6" ref={emblaRef}>
           <div className="flex -ml-6">
-            {filteredTreatments.map((treatment, idx) => (
+            {filteredTreatments.map((treatment) => (
               <div
                 key={treatment.slug}
                 className="flex-[0_0_82%] sm:flex-[0_0_45%] lg:flex-[0_0_31%] xl:flex-[0_0_24%] pl-6 shrink-0"
               >
-                <TreatmentCard treatment={treatment} index={idx} />
+                <TreatmentCard treatment={treatment} />
               </div>
             ))}
           </div>

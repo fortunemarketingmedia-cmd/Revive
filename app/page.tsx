@@ -10,6 +10,10 @@ import InstagramPreview from "@/components/home/InstagramPreview";
 import FAQSection from "@/components/home/FAQSection";
 import CTABanner from "@/components/home/CTABanner";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 export default function Home() {
   return (
     <>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -38,45 +38,40 @@ const slideshowPhotos = [
 
 export default function ClinicImages() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const startTimer = () => {
-    stopTimer();
-    timerRef.current = setInterval(() => {
-      setDirection(1);
-      setCurrentIndex((prev) => (prev + 1) % slideshowPhotos.length);
-    }, 4500); // 4.5 seconds interval
-  };
-
-  const stopTimer = () => {
+  const stopTimer = useCallback(() => {
     if (timerRef.current) {
       clearInterval(timerRef.current);
     }
-  };
+  }, []);
+
+  const startTimer = useCallback(() => {
+    stopTimer();
+    timerRef.current = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slideshowPhotos.length);
+    }, 4500); // 4.5 seconds interval
+  }, [stopTimer]);
 
   useEffect(() => {
     startTimer();
     return () => stopTimer();
-  }, []);
+  }, [startTimer, stopTimer]);
 
   const handleNext = () => {
     stopTimer();
-    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % slideshowPhotos.length);
     startTimer();
   };
 
   const handlePrev = () => {
     stopTimer();
-    setDirection(-1);
     setCurrentIndex((prev) => (prev - 1 + slideshowPhotos.length) % slideshowPhotos.length);
     startTimer();
   };
 
   const handleDotClick = (idx: number) => {
     stopTimer();
-    setDirection(idx > currentIndex ? 1 : -1);
     setCurrentIndex(idx);
     startTimer();
   };

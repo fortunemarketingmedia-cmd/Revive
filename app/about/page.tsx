@@ -11,6 +11,7 @@ export const metadata = {
   title: "About Dr. Shraddha Sonanis — Revive Skin Clinic Nashik",
   description:
     "Meet Dr. Shraddha Sonanis (MBBS, FCPS, DNB), lead dermatologist at Revive Skin Hair Clinic & Laser Centre in Nashik. 15+ years experience in medical & cosmetic dermatology.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

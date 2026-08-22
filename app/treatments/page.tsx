@@ -8,6 +8,7 @@ export const metadata = {
   title: "Skin, Hair & Laser Treatments — Revive Skin Clinic Nashik",
   description:
     "Explore 20+ advanced dermatological and cosmetic treatments offered at Revive Skin Hair Clinic & Laser Centre in Nashik. Led by Dr. Shraddha Sonanis.",
+  alternates: { canonical: "/treatments" },
 };
 
 export default function TreatmentsPage() {

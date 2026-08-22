@@ -10,6 +10,7 @@ export const metadata = {
   title: "Book an Appointment — Revive Skin Clinic Nashik",
   description:
     "Schedule your appointment with lead Dermatologist Dr. Shraddha Sonanis. Contact our Sharanpur Road or Nashik Road branches.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
