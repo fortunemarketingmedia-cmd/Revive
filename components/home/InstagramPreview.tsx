@@ -38,7 +38,7 @@ export default function InstagramPreview() {
             >
               <Image
                 src={photo}
-                alt="Clinic Treatment Instagram preview"
+                alt={`Revive Skin Hair Clinic & Laser Centre, Nashik — Instagram post ${idx + 1}`}
                 fill
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
                 className="object-cover transition-transform duration-700 ease-luxury group-hover:scale-105"

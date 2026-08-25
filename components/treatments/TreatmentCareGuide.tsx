@@ -120,6 +120,25 @@ export default function TreatmentCareGuide() {
           </div>
         </div>
 
+        {/*
+         * Both checklists rendered in normal (non-visually-hidden) markup
+         * so all pre- and post-care copy is present in the page's initial
+         * HTML for search crawlers — the interactive tabbed panel below
+         * only controls which one is visually emphasized. Fixes the
+         * "Post-Care tab content never rendered" risk flagged in the site
+         * audit (same pattern affected the Home/Treatments FAQ accordions).
+         */}
+        <div className="sr-only">
+          <h3>Pre-Treatment Checklist</h3>
+          {preCareList.map((item) => (
+            <p key={item.id}><strong>{item.title}:</strong> {item.desc}</p>
+          ))}
+          <h3>Post-Treatment Recovery</h3>
+          {postCareList.map((item) => (
+            <p key={item.id}><strong>{item.title}:</strong> {item.desc}</p>
+          ))}
+        </div>
+
         {/* Interactive Checklist Panel */}
         <div className="bg-[#FAF8F5] rounded-3xl sm:rounded-[2.5rem] p-4 sm:p-6 md:p-10 border border-[#EBE3D5] shadow-luxury relative overflow-hidden min-h-[420px]">
           {/* Subtle watermark badge */}

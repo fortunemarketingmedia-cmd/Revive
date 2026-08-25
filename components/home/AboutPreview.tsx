@@ -39,14 +39,14 @@ export default function AboutPreview() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="font-inter text-base md:text-lg text-body leading-relaxed mb-8 max-w-4xl"
             >
-              With over 15 years of board-certified expertise spanning Seth GS Medical College, KEM Hospital Mumbai, and Kaya Skin Clinic, we combine advanced medical dermatology, state-of-the-art USFDA lasers, and non-surgical aesthetic enhancements under one luxurious roof.
+              With over 17 years of board-certified expertise spanning Seth GS Medical College, KEM Hospital Mumbai, and Kaya Skin Clinic, we combine advanced medical dermatology, state-of-the-art USFDA lasers, and non-surgical aesthetic enhancements under one luxurious roof.
             </motion.p>
 
             {/* In-view stats counters */}
             <div className="grid grid-cols-3 gap-6 w-full mb-10 pt-8 border-t border-border">
               <div>
                 <div className="flex items-baseline">
-                  <StatCounter value={15} suffix="+" />
+                  <StatCounter value={17} suffix="+" />
                 </div>
                 <p className="font-inter text-[10px] uppercase font-bold tracking-wider text-body/60 mt-1">
                   Years of Expertise

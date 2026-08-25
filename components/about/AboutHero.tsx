@@ -29,7 +29,7 @@ export default function AboutHero() {
           transition={{ duration: 0.6 }}
           className="font-inter text-xs md:text-sm font-semibold tracking-widest text-[#7C131F] uppercase bg-[#7C131F]/5 border border-[#7C131F]/20 px-4 py-2 rounded-full mb-6 inline-block"
         >
-          Est. 2009 • Nashik, India
+          Est. 2015 • Nashik, India
         </motion.span>
 
         <motion.h1

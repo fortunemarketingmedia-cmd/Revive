@@ -10,7 +10,7 @@ export const faqs: FAQ[] = [
     id: 1,
     question: "How do I book an appointment at Revive Skin Clinic?",
     answer:
-      "You can book an appointment by calling us at 0253-231-0890 or +91-98230-63063, messaging us on WhatsApp, or filling out the online booking form on our Contact page. We will confirm your appointment within a few hours and send you a reminder before your scheduled date.",
+      "You can book an appointment by calling us at +91-98230-63063, messaging us on WhatsApp, or filling out the online booking form on our Contact page. We will confirm your appointment within a few hours and send you a reminder before your scheduled date.",
     category: "booking",
   },
   {

@@ -42,9 +42,13 @@ export default function StatCounter({ value, suffix = "", duration = 2 }: StatCo
     });
   }, [rounded, suffix]);
 
+  // Render the real final value up front so slow connections and crawlers
+  // never see a literal "0" before the count-up animation replaces it.
+  const initialDisplay = isFloat ? value.toFixed(1) : Math.round(value);
+
   return (
     <span ref={ref} className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-primary">
-      0{suffix}
+      {initialDisplay}{suffix}
     </span>
   );
 }

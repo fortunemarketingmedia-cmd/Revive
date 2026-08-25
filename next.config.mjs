@@ -20,6 +20,19 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    // Legacy pre-redesign URLs that are still indexed by Google — send them
+    // to their closest new-site equivalent instead of a hard 404
+    // (see website content audit, Sitewide Finding S3).
+    return [
+      { source: '/Laser-Treatments.html', destination: '/treatments?category=laser', permanent: true },
+      { source: '/Hair-Treatments.html', destination: '/treatments?category=hair', permanent: true },
+      { source: '/Anti-ageing-Treatments.html', destination: '/treatments?category=anti-ageing', permanent: true },
+      { source: '/about-us.html', destination: '/about', permanent: true },
+      { source: '/doctor-detail.html', destination: '/about', permanent: true },
+      { source: '/review.html', destination: '/gallery', permanent: true },
+    ];
+  },
   async headers() {
     const isProduction = process.env.NODE_ENV === 'production';
     const scriptSources = isProduction
@@ -33,6 +46,11 @@ const nextConfig = {
       "media-src 'self' blob:",
       "font-src 'self' data:",
       "connect-src 'self'",
+      // Without an explicit frame-src, the CSP falls back to default-src
+      // 'self' — which silently blocks the Google Maps <iframe> embeds on
+      // the Contact page (they render as a broken/blank frame instead of
+      // the map). Allow Google's embed domain explicitly.
+      "frame-src 'self' https://www.google.com",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",

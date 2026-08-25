@@ -143,7 +143,7 @@ export default function StatsSection() {
             >
               <div className="text-center">
                 <h4 className="font-playfair text-xl sm:text-2xl md:text-3xl font-bold text-[#7C131F]">
-                  15+
+                  17+
                 </h4>
                 <p className="font-inter text-[10px] uppercase font-bold tracking-wider text-body/60 mt-1">
                   Expert Years

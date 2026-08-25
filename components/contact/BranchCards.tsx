@@ -16,10 +16,6 @@ export default function BranchCards() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-[1440px] mx-auto">
           {clinicData.branches.map((branch, idx) => {
-            const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-              branch.plusCode
-            )}`;
-
             return (
               <motion.div
                 key={branch.id}
@@ -53,7 +49,7 @@ export default function BranchCards() {
                     <div className="flex gap-3 items-center">
                       <FiPhone className="text-primary shrink-0" />
                       <a href={`tel:${branch.mobile}`} className="hover:text-primary transition-colors font-medium">
-                        {branch.mobile} / {branch.phone}
+                        {branch.mobile}
                       </a>
                     </div>
                   </div>
@@ -76,7 +72,7 @@ export default function BranchCards() {
                 {/* Directions CTA */}
                 <div className="flex justify-start">
                   <a
-                    href={directionsUrl}
+                    href={branch.directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 font-inter text-[10px] font-bold uppercase tracking-widest text-primary hover:text-accent1 transition-colors border-b border-primary/20 pb-1"

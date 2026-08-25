@@ -92,7 +92,7 @@ export default function DoctorPreview() {
                 </span>
               ))}
               <span className="font-inter text-[10px] uppercase font-bold tracking-widest text-primary border border-primary/20 bg-primary/5 px-4 py-2 rounded-full">
-                15+ Years Clinical Practice
+                17+ Years Clinical Practice
               </span>
             </div>
 

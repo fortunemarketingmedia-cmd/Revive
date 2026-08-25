@@ -1,12 +1,37 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function CTABanner() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for subscribing to Revive newsletter!");
+    setStatus("loading");
+    setErrorMsg("");
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        const result = (await response.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(result?.error || "Unable to subscribe right now.");
+      }
+
+      setStatus("success");
+      setEmail("");
+    } catch (error) {
+      setStatus("error");
+      setErrorMsg(error instanceof Error ? error.message : "Unable to subscribe right now.");
+    }
   };
 
   return (
@@ -69,27 +94,47 @@ export default function CTABanner() {
             </motion.p>
 
             {/* Subscribe capsule form (Reference Image 1) */}
-            <motion.form
-              onSubmit={handleSubmit}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="flex items-center w-full max-w-md bg-white border border-border/80 rounded-full p-1 sm:p-1.5 shadow-sm focus-within:border-[#7C131F]/30 transition-all duration-300"
-            >
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-transparent text-heading placeholder-body/40 pl-5 pr-2 py-2 outline-none border-none flex-grow font-inter text-sm w-full min-w-0"
-                required
-              />
-              <button
-                type="submit"
-                className="bg-[#c27854] text-white font-inter text-xs uppercase font-bold tracking-wider px-6 py-2.5 sm:py-3 rounded-full hover:bg-black transition-colors shrink-0"
+            {status === "success" ? (
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="font-inter text-sm text-[#7C131F] font-semibold"
               >
-                Subscribe
-              </button>
-            </motion.form>
+                Thank you for subscribing to the Revive newsletter!
+              </motion.p>
+            ) : (
+              <motion.form
+                onSubmit={handleSubmit}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="flex flex-col gap-2 w-full max-w-md"
+              >
+                <div className="flex items-center w-full bg-white border border-border/80 rounded-full p-1 sm:p-1.5 shadow-sm focus-within:border-[#7C131F]/30 transition-all duration-300">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="bg-transparent text-heading placeholder-body/40 pl-5 pr-2 py-2 outline-none border-none flex-grow font-inter text-sm w-full min-w-0"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    className="bg-[#c27854] text-white font-inter text-xs uppercase font-bold tracking-wider px-6 py-2.5 sm:py-3 rounded-full hover:bg-black transition-colors shrink-0 disabled:opacity-60"
+                  >
+                    {status === "loading" ? "Submitting..." : "Subscribe"}
+                  </button>
+                </div>
+                {status === "error" && (
+                  <p className="font-inter text-xs text-[#7C131F] pl-4">{errorMsg}</p>
+                )}
+              </motion.form>
+            )}
           </div>
 
         </div>

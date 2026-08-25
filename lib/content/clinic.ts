@@ -4,15 +4,14 @@ export const clinicData = {
   tagline: "Revive Your Skin. Rediscover Yourself.",
   subTagline: "Expert dermatology meets luxury care in Nashik",
   description:
-    "Nashik's premier skin, hair & laser clinic led by Dr. Shraddha Sonanis — FCPS, DNB. Combining advanced medical dermatology with aesthetic excellence since 2009.",
-  phone: "0253-231-0890",
+    "Nashik's premier skin, hair & laser clinic led by Dr. Shraddha Sonanis — FCPS, DNB. Combining advanced medical dermatology with aesthetic excellence since 2015.",
   mobile: "+91-98230-63063",
   whatsapp: "+919823063063",
-  email: "contact@drshraddhasonanis.in",
+  email: "reviveskinclinic77@gmail.com",
   website: "https://www.reviveskinclinics.in",
   instagram: "https://www.instagram.com/revive_skinclinic_laser/",
   instagramHandle: "@revive_skinclinic_laser",
-  facebook: "https://www.facebook.com",
+  facebook: "https://www.facebook.com/profile.php?id=100063745311985",
   justdial: "https://www.justdial.com/Nashik/Revive-Skin-Clinic-And-Laser-Centre-Beside-Soni-Paithani-Showroom-Sharanpur/0253PX253-X253-151031095353-Y2K6_BZDET",
   branches: [
     {
@@ -25,10 +24,17 @@ export const clinicData = {
       pincode: "422002",
       landmark: "Next to Insure Eye Institute",
       plusCode: "XQXC+XR Nashik, Maharashtra",
-      phone: "0253-231-0890",
+      lat: 19.9998783,
+      lng: 73.7720147,
       mobile: "+91-98230-63063",
       timings: "Mon – Sat: 10:00 AM – 2:00 PM & 5:00 PM – 8:00 PM",
-      mapUrl: "https://www.google.com/maps?q=XQXC%2BXR%20Nashik%2C%20Maharashtra&output=embed",
+      // Embed centered on the verified Google Business Profile coordinates
+      // for this branch (resolved from the client's GBP share link),
+      // instead of a bare Plus Code (site audit, Sitewide Finding S6 /
+      // Contact page issue #6).
+      mapUrl: "https://www.google.com/maps?q=19.9998783,73.7720147&z=17&output=embed",
+      // Direct link to the verified Google Business Profile listing.
+      directionsUrl: "https://maps.app.goo.gl/mKPeM6MWR2PPKJyo9",
     },
     {
       id: 2,
@@ -40,17 +46,19 @@ export const clinicData = {
       pincode: "422101",
       landmark: "Near Muktidham Temple",
       plusCode: "XR3P+47 Nashik, Maharashtra",
-      phone: "0253-231-0890",
+      lat: 19.9527523,
+      lng: 73.8356604,
       mobile: "+91-98230-63063",
       timings: "Mon – Sat: 10:00 AM – 2:00 PM & 5:00 PM – 8:00 PM",
-      mapUrl: "https://www.google.com/maps?q=XR3P%2B47%20Nashik%2C%20Maharashtra&output=embed",
+      mapUrl: "https://www.google.com/maps?q=19.9527523,73.8356604&z=17&output=embed",
+      directionsUrl: "https://maps.app.goo.gl/rDqFhD4zD4dg48kZ9",
     },
   ],
   stats: [
     { value: 5000, suffix: "+", label: "Happy Patients" },
-    { value: 15, suffix: "+", label: "Years Experience" },
+    { value: 17, suffix: "+", label: "Years Experience" },
     { value: 4.8, suffix: "★", label: "Average Rating" },
-    { value: 20, suffix: "+", label: "Treatments Offered" },
+    { value: 23, suffix: "+", label: "Treatments Offered" },
   ],
   whyChooseUs: [
     {
@@ -96,20 +104,20 @@ export const doctorData = {
   name: "Dr. Shraddha Sonanis",
   title: "MBBS, FCPS, DNB",
   specialization: "Dermatologist, Aesthetic Physician & Trichologist",
-  experience: "15+ Years",
+  experience: "17+ Years",
   role: "Founder & Lead Consultant",
   quote:
     "Every skin tells a story. My role is to help it tell its most confident, radiant version.",
-  bio: `Dr. Shraddha Sonanis is a board-certified Dermatologist and Aesthetic Physician with over 15 years of clinical expertise in medical and cosmetic dermatology. She completed her MBBS from Topiwala National Medical College & BYL Nair Charitable Hospital, Mumbai, followed by her FCPS in Dermatology, Venereology & Leprosy from King Edward Memorial (KEM) Hospital, Mumbai in 2009, and her prestigious DNB in Dermatology & Venereology from Seth GS Medical College & KEM Hospital in 2012.
+  bio: `Dr. Shraddha Sonanis is a board-certified Dermatologist and Aesthetic Physician with over 17 years of clinical expertise in medical and cosmetic dermatology. She completed her MBBS from Topiwala National Medical College & BYL Nair Charitable Hospital, Mumbai, followed by her FCPS in Dermatology, Venereology & Leprosy from King Edward Memorial (KEM) Hospital, Mumbai in 2009, and her prestigious DNB in Dermatology & Venereology from Seth GS Medical College & KEM Hospital in 2012.
 
-Before founding Revive, Dr. Sonanis spent six formative years at Kaya Skin Clinic — one of India's leading dermatology chains — where she honed her skills in advanced laser procedures, aesthetic treatments, and patient-centred care. This experience shaped her philosophy: that great skin care is as much about listening as it is about science.
+Before founding Revive, Dr. Sonanis spent several formative years at Kaya Skin Clinic — one of India's leading dermatology chains — where she honed her skills in advanced laser procedures, aesthetic treatments, and patient-centred care. This experience shaped her philosophy: that great skin care is as much about listening as it is about science. She founded Revive Skin Hair Clinic & Laser Centre in 2015.
 
 Dr. Sonanis is a proud member of the Indian Association of Dermatologists, Venereologists and Leprologists (IADVL) and the Indian Medical Association (IMA). Her clinical focus includes complex autoimmune conditions like Vitiligo and Psoriasis, hair loss disorders, and advanced aesthetic procedures including Botox, Dermal Fillers, HIFU, and Platelet-Rich Plasma (PRP) therapy.
 
 In addition to leading Revive Skin Clinic in Nashik, Dr. Sonanis serves as a visiting Dermatologist at Skin and Clinic in Bandra, Mumbai, bringing her specialized expertise in aesthetic medicine and clinical dermatology to a broader demographic.
 
 At Revive, she has created a space where world-class dermatological expertise meets warm, personalised attention — because every patient deserves to feel their best in their own skin.`,
-  shortBio: `Board-certified Dermatologist with FCPS & DNB from KEM Hospital, Mumbai. Founder of Revive with 15+ years of clinical experience, and visiting Dermatologist at Skin and Clinic in Bandra, Mumbai.`,
+  shortBio: `Board-certified Dermatologist with FCPS & DNB from KEM Hospital, Mumbai. Founder of Revive (est. 2015) with 17+ years of clinical experience, and visiting Dermatologist at Skin and Clinic in Bandra, Mumbai.`,
   credentials: [
     {
       degree: "MBBS",

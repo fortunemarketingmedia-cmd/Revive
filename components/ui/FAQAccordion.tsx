@@ -1,7 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 
@@ -17,6 +17,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQAccordionItemProps) 
     <div className="border-b border-border last:border-0 py-6">
       <button
         onClick={onToggle}
+        aria-expanded={isOpen}
         className="w-full flex justify-between items-center text-left gap-4 group focus:outline-none"
       >
         <span className="font-playfair text-lg md:text-xl font-medium text-heading transition-colors group-hover:text-primary">
@@ -27,21 +28,23 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQAccordionItemProps) 
         </span>
       </button>
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <div className="pt-4 font-inter text-sm md:text-base text-body leading-relaxed max-w-4xl pr-8">
-              {answer}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/*
+       * The answer is always mounted in the DOM (never conditionally
+       * rendered) so it's present in the page's initial HTML for search
+       * crawlers and FAQ rich-result eligibility — only its visible
+       * height/opacity are animated when toggled. See site audit: FAQ
+       * accordions previously injected answer text only on click.
+       */}
+      <motion.div
+        initial={false}
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="overflow-hidden"
+      >
+        <div className="pt-4 font-inter text-sm md:text-base text-body leading-relaxed max-w-4xl pr-8">
+          {answer}
+        </div>
+      </motion.div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ const affiliations = [
     acronym: "IADVL",
     name: "Indian Association of Dermatologists, Venereologists and Leprologists",
     description: "The primary national body representing Indian dermatologists, ensuring clinical excellence, regular scientific exchanges, and adherence to rigorous ethical standards.",
-    credential: "Life Member",
+    credential: "Member",
   },
   {
     acronym: "IMA",

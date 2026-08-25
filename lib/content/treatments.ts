@@ -39,7 +39,7 @@ export const treatmentCategories = [
     description: "USFDA-approved laser technology for hair reduction, skin rejuvenation, and scar removal.",
     icon: "◉",
     count: 6,
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
+    image: "/images/gallery/usfda.webp",
   },
   {
     id: "anti-ageing",

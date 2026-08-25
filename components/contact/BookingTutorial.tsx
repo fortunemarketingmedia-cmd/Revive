@@ -18,7 +18,7 @@ const bookingOptions = [
     title: "2. WhatsApp Text",
     description: "Send us a quick message to coordinate availability and get confirmations.",
     cta: "Chat on WhatsApp",
-    href: `https://wa.me/${clinicData.whatsapp}?text=Hi%20Revive%20Skin%20Clinics,%20I'd%20like%20to%20inquire%20about%20an%20appointment.`,
+    href: `https://wa.me/${clinicData.whatsapp}?text=Hi%20Revive%20Skin%20Hair%20Clinic%20%26%20Laser%20Centre,%20I'd%20like%20to%20inquire%20about%20an%20appointment.`,
   },
   {
     icon: FiFileText,
