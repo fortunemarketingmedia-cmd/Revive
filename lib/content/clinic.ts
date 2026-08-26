@@ -23,16 +23,15 @@ export const clinicData = {
       state: "Maharashtra",
       pincode: "422002",
       landmark: "Next to Insure Eye Institute",
-      plusCode: "XQXC+XR Nashik, Maharashtra",
       lat: 19.9998783,
       lng: 73.7720147,
       mobile: "+91-98230-63063",
       timings: "Mon – Sat: 10:00 AM – 2:00 PM & 5:00 PM – 8:00 PM",
-      // Embed centered on the verified Google Business Profile coordinates
-      // for this branch (resolved from the client's GBP share link),
-      // instead of a bare Plus Code (site audit, Sitewide Finding S6 /
-      // Contact page issue #6).
-      mapUrl: "https://www.google.com/maps?q=19.9998783,73.7720147&z=17&output=embed",
+      // Official Google-generated embed code (Share > Embed a map) for the
+      // client's verified Google Business Profile listing — Sitewide
+      // Finding S6 / Contact page issue #6.
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.2057323907293!2d73.7720147!3d19.9998783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeba06da8c44d%3A0xc1e390ed1b28404c!2sREVIVE%20SKIN%20%26%20HAIR%20CLINIC%20LASER%20CENTER!5e0!3m2!1sen!2sin!4v1787742673998!5m2!1sen!2sin",
       // Direct link to the verified Google Business Profile listing.
       directionsUrl: "https://maps.app.goo.gl/mKPeM6MWR2PPKJyo9",
     },
@@ -45,12 +44,12 @@ export const clinicData = {
       state: "Maharashtra",
       pincode: "422101",
       landmark: "Near Muktidham Temple",
-      plusCode: "XR3P+47 Nashik, Maharashtra",
       lat: 19.9527523,
       lng: 73.8356604,
       mobile: "+91-98230-63063",
       timings: "Mon – Sat: 10:00 AM – 2:00 PM & 5:00 PM – 8:00 PM",
-      mapUrl: "https://www.google.com/maps?q=19.9527523,73.8356604&z=17&output=embed",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d59987.293547365814!2d73.7308151!3d19.9998735!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd95b6ef384611%3A0xc3d0d03c6d862bbc!2sREVIVE%20SKIN%20%26%20HAIR%20CLINIC%20LASER%20CENTER!5e0!3m2!1sen!2sin!4v1787742708255!5m2!1sen!2sin",
       directionsUrl: "https://maps.app.goo.gl/rDqFhD4zD4dg48kZ9",
     },
   ],

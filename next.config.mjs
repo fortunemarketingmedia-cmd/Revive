@@ -47,10 +47,11 @@ const nextConfig = {
       "font-src 'self' data:",
       "connect-src 'self'",
       // Without an explicit frame-src, the CSP falls back to default-src
-      // 'self' — which silently blocks the Google Maps <iframe> embeds on
-      // the Contact page (they render as a broken/blank frame instead of
-      // the map). Allow Google's embed domain explicitly.
-      "frame-src 'self' https://www.google.com",
+      // 'self' — which silently blocks any off-site <iframe>: the Google
+      // Maps embeds on the Contact page, and the Instagram reel embeds on
+      // the About page ("This content is blocked. Contact the site owner
+      // to fix the issue."). Allow both embed domains explicitly.
+      "frame-src 'self' https://www.google.com https://www.instagram.com https://instagram.com",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",

@@ -37,7 +37,6 @@ export default function BranchCards() {
                       <div>
                         <p className="leading-relaxed">{branch.address}</p>
                         <p className="text-xs text-body/50 mt-1">Landmark: {branch.landmark}</p>
-                        <p className="text-xs font-semibold text-primary mt-1">Plus Code: {branch.plusCode}</p>
                       </div>
                     </div>
 
