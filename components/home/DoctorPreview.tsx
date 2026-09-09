@@ -11,16 +11,16 @@ export default function DoctorPreview() {
   return (
     <section className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 2xl:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-16 items-center lg:items-stretch">
           
           {/* Left Column: Doctor Image with parallax container */}
-          <div className="lg:col-span-5 relative w-full flex justify-center order-last lg:order-first">
+          <div className="lg:col-span-5 relative w-full flex justify-center order-last lg:order-first lg:items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="relative w-full aspect-[4/5] max-w-[400px] rounded-[30px] overflow-hidden shadow-luxury border border-border bg-altbg"
+              className="relative w-full aspect-[4/5] lg:aspect-auto lg:h-full max-w-[400px] rounded-[30px] overflow-hidden shadow-luxury border border-border bg-altbg"
             >
               <Image
                 src="/images/home/DR.webp"
