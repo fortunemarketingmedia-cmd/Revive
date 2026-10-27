@@ -270,6 +270,7 @@ html {
 
   body {
     min-width: 320px;
+    padding-bottom: 5rem;
   }
 
   /* Prevent iOS from zooming the page when a form field receives focus. */

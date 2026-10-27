@@ -5,7 +5,6 @@ import TreatmentCategories from "@/components/home/TreatmentCategories";
 import DoctorPreview from "@/components/home/DoctorPreview";
 import StatsSection from "@/components/home/StatsSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
-import Testimonials from "@/components/home/Testimonials";
 import InstagramPreview from "@/components/home/InstagramPreview";
 import FAQSection from "@/components/home/FAQSection";
 import CTABanner from "@/components/home/CTABanner";
@@ -24,7 +23,6 @@ export default function Home() {
       <DoctorPreview />
       <StatsSection />
       <WhyChooseUs />
-      <Testimonials />
       <InstagramPreview />
       <FAQSection />
       <CTABanner />

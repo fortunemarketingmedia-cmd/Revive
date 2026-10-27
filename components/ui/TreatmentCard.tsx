@@ -66,7 +66,9 @@ export default function TreatmentCard({ treatment }: TreatmentCardProps) {
         href={`/treatments/${treatment.slug}`}
         className="absolute inset-0 z-30 rounded-[2rem] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#FDBD0E] focus-visible:ring-inset"
         aria-label={`Learn more about ${treatment.name}`}
-      />
+      >
+        <span className="sr-only">View {treatment.name} treatment details in Nashik</span>
+      </Link>
     </motion.div>
   );
 }

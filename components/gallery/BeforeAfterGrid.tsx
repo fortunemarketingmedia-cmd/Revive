@@ -94,7 +94,7 @@ export default function BeforeAfterGrid() {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-[1440px] mx-auto mt-12">
-          {comparisons.map((item, index) => (
+          {comparisons.map((item) => (
             <article
               key={item.title}
               className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm"

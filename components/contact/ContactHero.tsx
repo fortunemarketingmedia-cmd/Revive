@@ -37,8 +37,8 @@ export default function ContactHero() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="font-playfair text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white leading-[1.15] mb-6"
         >
-          Begin Your Skin <br />
-          <span className="italic text-[#FDBD0E] font-light">Journey With Us.</span>
+          Book a Skin Consultation <br />
+          <span className="italic text-[#FDBD0E] font-light">in Nashik.</span>
         </motion.h1>
 
         <motion.p

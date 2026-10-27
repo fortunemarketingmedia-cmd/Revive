@@ -12,7 +12,7 @@ export default function GalleryHero() {
       {/* Full-bleed background image */}
       <Image
         src="/images/gallery/gallery-hero.webp"
-        alt="Revive Patient Transformations"
+        alt="Revive Skin Hair Clinic in Nashik"
         fill
         priority
         sizes="100vw"
@@ -29,7 +29,7 @@ export default function GalleryHero() {
           transition={{ duration: 0.6 }}
           className="font-inter text-xs md:text-sm font-semibold tracking-widest text-[#7C131F] uppercase bg-[#7C131F]/5 border border-[#7C131F]/20 px-4 py-2 rounded-full mb-6 inline-block"
         >
-          Visual Portfolio • Real Results
+          Clinic Gallery • Nashik
         </motion.span>
 
         <motion.h1
@@ -38,8 +38,8 @@ export default function GalleryHero() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="font-playfair text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.15] mb-6"
         >
-          Clinical Truth, <br />
-          <span className="italic text-[#7C131F] font-light">Through Real Results.</span>
+          Inside Revive Skin Clinics, <br />
+          <span className="italic text-[#7C131F] font-light">Nashik.</span>
         </motion.h1>
 
         <motion.p
@@ -48,7 +48,7 @@ export default function GalleryHero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-inter text-sm md:text-base text-black/80 font-medium leading-relaxed max-w-2xl mb-8"
         >
-          Explore genuine, unretouched skin and hair transformations completed by our specialists in Nashik.
+          Explore our consultation spaces, treatment rooms, and clinical technology across Revive&apos;s Nashik clinics.
         </motion.p>
 
         {/* CTAs */}
@@ -63,15 +63,15 @@ export default function GalleryHero() {
             className="group relative flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto font-inter text-xs font-bold uppercase tracking-widest text-white bg-[#7C131F] rounded-full shadow-[0_10px_30px_rgba(124,19,31,0.15)] transition-all duration-500 hover:bg-black hover:text-white hover:scale-105 active:scale-95"
           >
             <FiCalendar className="text-base shrink-0" />
-            <span>Book Transformation</span>
+            <span>Book a Consultation</span>
             <FiArrowRight className="text-base transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
           <a
-            href="#before-after-gallery"
+            href="#clinic-gallery"
             className="flex w-full sm:w-auto items-center justify-center bg-white/55 sm:bg-transparent border border-black/20 text-black font-inter text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-black/5 transition-all duration-300"
           >
-            <span>View Case Studies</span>
+            <span>View the Clinic</span>
           </a>
         </motion.div>
       </div>

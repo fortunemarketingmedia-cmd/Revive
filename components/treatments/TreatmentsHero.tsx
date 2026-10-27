@@ -38,8 +38,8 @@ export default function TreatmentsHero() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="font-playfair text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.15] mb-6"
         >
-          Advanced Care, <br />
-          <span className="italic text-[#7C131F] font-light">Tailored to Your Skin.</span>
+          Skin, Hair &amp; Laser <br />
+          <span className="italic text-[#7C131F] font-light">Treatments in Nashik.</span>
         </motion.h1>
 
         <motion.p

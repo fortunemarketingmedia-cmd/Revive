@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiCheck, FiArrowLeft, FiClock, FiCalendar, FiActivity, FiShield, FiPhoneCall } from "react-icons/fi";
 import { treatments, getTreatmentBySlug } from "@/lib/content/treatments";
+import { clinicData, doctorData } from "@/lib/content/clinic";
 import LuxuryButton from "@/components/ui/LuxuryButton";
 
 interface TreatmentDetailPageProps {
@@ -24,11 +25,11 @@ export async function generateMetadata({ params }: TreatmentDetailPageProps) {
 
   return {
     title: `${treatment.name} — Revive Skin Clinic Nashik`,
-    description: treatment.description,
+    description: `${treatment.name} consultation and treatment planning in Nashik with Dr. Shraddha Sonanis at Revive Skin Clinics. ${treatment.description}`,
     alternates: { canonical: `/treatments/${treatment.slug}` },
     openGraph: {
       title: `${treatment.name} — Revive Skin Clinic Nashik`,
-      description: treatment.description,
+      description: `${treatment.name} consultation and treatment planning at Revive Skin Clinics in Nashik.`,
       type: "article",
       images: [{ url: treatment.image, alt: treatment.name }],
     },
@@ -49,8 +50,26 @@ export default async function TreatmentDetailPage({ params }: TreatmentDetailPag
     notFound();
   }
 
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    name: `${treatment.name} in Nashik`,
+    description: treatment.description,
+    url: `${clinicData.website}/treatments/${treatment.slug}`,
+    image: `${clinicData.website}${treatment.image}`,
+    procedureType: treatment.categoryLabel,
+    howPerformed: treatment.procedure.join("; "),
+    followup: treatment.recovery,
+    provider: {
+      "@type": "Physician",
+      "@id": `${clinicData.website}/about#physician`,
+      name: doctorData.name,
+    },
+  };
+
   return (
     <article className="py-12 md:py-24 bg-background relative z-10 w-full overflow-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }} />
       {/* Decorative background blobs */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-secondary/5 filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[450px] h-[450px] rounded-full bg-primary/5 filter blur-3xl pointer-events-none" />
@@ -76,7 +95,7 @@ export default async function TreatmentDetailPage({ params }: TreatmentDetailPag
               {treatment.categoryLabel} &bull; {treatment.tagline}
             </span>
             <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl text-heading font-medium tracking-tight leading-[1.1] mb-6">
-              {treatment.name}
+              {treatment.name} in Nashik
             </h1>
             <p className="font-inter text-base md:text-lg text-body/90 leading-relaxed border-l-2 border-primary/35 pl-6">
               {treatment.description}

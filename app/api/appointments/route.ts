@@ -13,6 +13,7 @@ type AppointmentPayload = {
   branch?: unknown;
   date?: unknown;
   message?: unknown;
+  privacyConsent?: unknown;
 };
 
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
@@ -71,6 +72,7 @@ export async function POST(request: NextRequest) {
     branch: text(body.branch, 100),
     date: text(body.date, 10),
     message: text(body.message, 1000),
+    privacyConsent: body.privacyConsent === true,
   };
 
   const allowedCategories = new Set(["skin", "hair", "laser", "anti-ageing", ""]);
@@ -88,12 +90,15 @@ export async function POST(request: NextRequest) {
     || !allowedTreatments.has(appointment.treatment)
     || !allowedBranches.has(appointment.branch)
     || !datePattern.test(appointment.date)
+    || !appointment.privacyConsent
   ) {
     return NextResponse.json({ error: "Please check the form details and try again." }, { status: 400 });
   }
 
   const webhookUrl = process.env.CRM_WEBHOOK_URL;
-  if (!webhookUrl) {
+  const webhookSecret = process.env.CRM_WEBHOOK_SECRET
+    || process.env.CRM_WEBHOOK_BEARER_TOKEN;
+  if (!webhookUrl || !webhookSecret) {
     return NextResponse.json(
       { error: "Online booking is temporarily unavailable. Please call the clinic." },
       { status: 503 },
@@ -101,14 +106,32 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const headers: Record<string, string> = { "Content-Type": "application/json" };
-    if (process.env.CRM_WEBHOOK_BEARER_TOKEN) {
-      headers.Authorization = `Bearer ${process.env.CRM_WEBHOOK_BEARER_TOKEN}`;
-    }
+    const treatmentName = treatments.find((item) => item.slug === appointment.treatment)?.name;
+    const branchName = appointment.branch
+      .replace(/\s*\(Main Branch\)\s*$/i, "")
+      .replace(/\s+Branch\s*$/i, "")
+      .trim();
+    const headers: Record<string, string> = {
+      "Content-Type": "application/json",
+      "x-lead-ingest-secret": webhookSecret,
+    };
     const response = await fetch(webhookUrl, {
       method: "POST",
       headers,
-      body: JSON.stringify({ ...appointment, source: "reviveskinclinics.in" }),
+      body: JSON.stringify({
+        name: appointment.name,
+        mobile: appointment.phone,
+        email: appointment.email || undefined,
+        branchName,
+        interestedTreatment: treatmentName || appointment.category || undefined,
+        preferredDate: appointment.date,
+        message: appointment.message || undefined,
+        formName: "Website appointment request",
+        pageUrl: "https://www.reviveskinclinics.in/contact",
+        utmSource: "reviveskinclinics.in",
+        privacyConsent: true,
+        consentAt: new Date().toISOString(),
+      }),
       signal: AbortSignal.timeout(8_000),
       cache: "no-store",
     });

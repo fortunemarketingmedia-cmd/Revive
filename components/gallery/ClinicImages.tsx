@@ -97,7 +97,7 @@ export default function ClinicImages() {
   };
 
   return (
-    <section className="relative w-full h-[460px] sm:h-[550px] md:h-[650px] overflow-hidden flex flex-col justify-between py-10 sm:py-16 md:py-20 text-white z-10 bg-black">
+    <section id="clinic-gallery" className="relative w-full h-[460px] sm:h-[550px] md:h-[650px] overflow-hidden flex flex-col justify-between py-10 sm:py-16 md:py-20 text-white z-10 bg-black scroll-mt-24">
       
       {/* Immersive Slideshow Background Images */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">

@@ -20,6 +20,7 @@ export default function AppointmentForm() {
     branch: "",
     date: "",
     message: "",
+    privacyConsent: false,
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -50,8 +51,11 @@ export default function AppointmentForm() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    const nextValue = e.target instanceof HTMLInputElement && e.target.type === "checkbox"
+      ? e.target.checked
+      : value;
     setFormData((prev) => {
-      const updated = { ...prev, [name]: value };
+      const updated = { ...prev, [name]: nextValue };
       // Reset specific treatment if category changes
       if (name === "category") {
         updated.treatment = "";
@@ -87,6 +91,7 @@ export default function AppointmentForm() {
         branch: "",
         date: "",
         message: "",
+        privacyConsent: false,
       });
     } catch {
       setErrorMsg("We could not send your request. Please try again or call the clinic directly.");
@@ -270,6 +275,23 @@ export default function AppointmentForm() {
                     className="font-inter text-sm border border-border/80 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors bg-altbg/10 resize-none"
                   />
                 </div>
+
+                <label className="md:col-span-2 flex items-start gap-3 rounded-xl border border-border/80 bg-altbg/20 p-4 font-inter text-xs leading-relaxed text-body">
+                  <input
+                    type="checkbox"
+                    name="privacyConsent"
+                    checked={formData.privacyConsent}
+                    onChange={handleInputChange}
+                    required
+                    className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+                  />
+                  <span>
+                    I consent to Revive Skin Clinics using my details to respond to this appointment request, as described in the{" "}
+                    <a href="/privacy" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline underline-offset-2">
+                      Privacy Policy
+                    </a>.
+                  </span>
+                </label>
 
                 {/* Error Banner */}
                 {errorMsg && (

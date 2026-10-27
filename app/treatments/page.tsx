@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import TreatmentsHero from "@/components/treatments/TreatmentsHero";
 import TreatmentGrid from "@/components/treatments/TreatmentGrid";
-import BeforeAfterSection from "@/components/treatments/BeforeAfterSection";
 import TreatmentCareGuide from "@/components/treatments/TreatmentCareGuide";
 
 // Force per-request server rendering instead of static generation.
@@ -46,7 +45,6 @@ export default function TreatmentsPage() {
       <Suspense fallback={<div className="py-20 text-center font-inter text-sm text-body/60">Loading treatments...</div>}>
         <TreatmentGrid />
       </Suspense>
-      <BeforeAfterSection />
       <TreatmentCareGuide />
     </>
   );

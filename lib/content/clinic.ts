@@ -16,6 +16,7 @@ export const clinicData = {
   branches: [
     {
       id: 1,
+      slug: "sharanpur-road",
       name: "Sharanpur Road (Main Branch)",
       address:
         "Adhaar Bungalow, Next to Insure Eye Institute, Near Soni Paithani Saree Shop, Racca Colony, Sharanpur Road",
@@ -37,6 +38,7 @@ export const clinicData = {
     },
     {
       id: 2,
+      slug: "nashik-road",
       name: "Nashik Road Branch",
       address:
         "Second Floor, Dnyaneshwar Bhuwan, Near Muktidham Temple, Nashik Road",
@@ -57,7 +59,7 @@ export const clinicData = {
     { value: 5000, suffix: "+", label: "Happy Patients" },
     { value: 17, suffix: "+", label: "Years Experience" },
     { value: 4.8, suffix: "★", label: "Average Rating" },
-    { value: 23, suffix: "+", label: "Treatments Offered" },
+    { value: 27, suffix: "+", label: "Treatments Offered" },
   ],
   whyChooseUs: [
     {
