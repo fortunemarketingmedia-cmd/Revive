@@ -93,13 +93,19 @@ export default function Footer() {
             <li>
               <Link href="/gallery" className="text-body/70 hover:text-[#7C131F] transition-colors duration-300 flex items-center gap-2 group">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#7C131F] scale-0 group-hover:scale-100 transition-transform duration-300 shrink-0" />
-                <span>Before & After Gallery</span>
+                <span>Clinic Gallery</span>
               </Link>
             </li>
             <li>
               <Link href="/contact" className="text-body/70 hover:text-[#7C131F] transition-colors duration-300 flex items-center gap-2 group">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#7C131F] scale-0 group-hover:scale-100 transition-transform duration-300 shrink-0" />
                 <span>Contact & Booking</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy" className="text-body/70 hover:text-[#7C131F] transition-colors duration-300 flex items-center gap-2 group">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#7C131F] scale-0 group-hover:scale-100 transition-transform duration-300 shrink-0" />
+                <span>Privacy Policy</span>
               </Link>
             </li>
           </ul>
@@ -110,8 +116,9 @@ export default function Footer() {
           <h4 className="font-playfair text-xl sm:text-2xl text-heading font-semibold tracking-wide">Branches</h4>
           <div className="flex flex-col gap-6 font-inter text-sm leading-relaxed text-body/70">
             {clinicData.branches.map((branch) => (
-              <div
+              <Link
                 key={branch.id}
+                href={`/locations/${branch.slug}`}
                 className="flex gap-3 items-start"
               >
                 <FiMapPin className="text-[#7C131F] shrink-0 mt-1 text-base" />
@@ -122,7 +129,7 @@ export default function Footer() {
                     {branch.timings}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
             <div className="flex flex-col gap-3 mt-2 pt-4 border-t border-black/5">
               <a

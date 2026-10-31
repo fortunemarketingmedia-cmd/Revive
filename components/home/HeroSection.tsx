@@ -228,9 +228,9 @@ export default function HeroSection() {
             }}
             className="mb-1 font-playfair text-[clamp(2.15rem,10vw,3rem)] font-bold leading-[1.08] tracking-tight text-neutral-900 sm:mb-2 sm:text-5xl md:text-6xl lg:text-[86px]"
           >
-            Making skin &amp;
+            Skin &amp; hair care
             <br />
-            hair care
+            in Nashik
           </motion.h1>
 
           {/* Rotating highlighted word */}

@@ -38,8 +38,8 @@ export default function AboutHero() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="font-playfair text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-[1.15] mb-6"
         >
-          Crafting Confidence, <br />
-          <span className="italic text-[#7C131F] font-light">One Skin at a Time.</span>
+          Dr. Shraddha Sonanis, <br />
+          <span className="italic text-[#7C131F] font-light">Dermatologist in Nashik.</span>
         </motion.h1>
 
         <motion.p

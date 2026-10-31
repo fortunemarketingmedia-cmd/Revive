@@ -5,7 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LenisProvider from "@/components/providers/LenisProvider";
 import AIChatbot from "@/components/ui/AIChatbot";
-import BookingPopup from "@/components/layout/BookingPopup";
+import MobileContactBar from "@/components/layout/MobileContactBar";
 import TreatmentModalProvider from "@/components/providers/TreatmentModalProvider";
 import { clinicData, doctorData } from "@/lib/content/clinic";
 
@@ -91,11 +91,11 @@ export default function RootLayout({
   // LocalBusiness/MedicalClinic structured data per branch — supports local
   // pack rankings and rich results for a city-only SEO scope (see audit S4).
   const medicalClinicSchema = clinicData.branches.map((branch) => ({
-    "@context": "https://schema.org",
     "@type": "MedicalClinic",
+    "@id": `${clinicData.website}/locations/${branch.slug}#clinic`,
     name: `${clinicData.name} — ${branch.name}`,
     image: `${clinicData.website}/images/REVIVE_LOGO.svg`,
-    url: clinicData.website,
+    url: `${clinicData.website}/locations/${branch.slug}`,
     telephone: branch.mobile,
     email: clinicData.email,
     address: {
@@ -118,17 +118,34 @@ export default function RootLayout({
     sameAs: [clinicData.instagram, clinicData.facebook],
     founder: {
       "@type": "Physician",
+      "@id": `${clinicData.website}/about#physician`,
       name: doctorData.name,
       medicalSpecialty: "Dermatology",
     },
   }));
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Physician",
+        "@id": `${clinicData.website}/about#physician`,
+        name: doctorData.name,
+        url: `${clinicData.website}/about`,
+        image: `${clinicData.website}/images/home/DR.webp`,
+        medicalSpecialty: "Dermatology",
+        honorificSuffix: doctorData.title,
+        worksFor: medicalClinicSchema.map((branch) => ({ "@id": branch["@id"] })),
+      },
+      ...medicalClinicSchema,
+    ],
+  };
 
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${inter.variable} ${playfairDisplay.variable}`} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <LenisProvider>
           <TreatmentModalProvider>
@@ -140,8 +157,8 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <MobileContactBar />
             <AIChatbot />
-            <BookingPopup />
           </TreatmentModalProvider>
         </LenisProvider>
       </body>
